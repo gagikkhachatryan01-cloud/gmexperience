@@ -15,13 +15,20 @@ body {
 }
 
 header {
-    padding: 80px 20px;
+    padding: 60px 20px 80px 20px;
     background: linear-gradient(to bottom, #000, #1a1a1a);
+}
+
+.logo {
+    width: 180px;
+    max-width: 80%;
+    margin-bottom: 20px;
 }
 
 h1 {
     font-size: 42px;
     margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 h2 {
@@ -37,38 +44,48 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .card {
     background: #1f1f1f;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     width: 280px;
+    transition: 0.3s ease;
 }
 
-.card h3 {
-    margin-top: 0;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.08);
 }
 
 .price {
     font-size: 24px;
     margin: 15px 0;
-    color: #ffd700;
+    font-weight: bold;
 }
 
 button {
-    background: #ffd700;
+    background: #ffffff;
     border: none;
     padding: 12px 20px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #cccccc;
 }
 
 footer {
     padding: 40px 20px;
     background: #000;
+    font-size: 14px;
+    color: #888;
 }
 
 .lang {
@@ -88,6 +105,7 @@ footer {
 </div>
 
 <header>
+    <img src="GM_Experience.png" alt="GM Experience Logo" class="logo">
     <h1>GM Experience</h1>
     <h2>Премиальные локальные услуги в Италии</h2>
     <p>Индивидуальная помощь с момента прибытия до подлинных впечатлений.</p>

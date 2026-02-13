@@ -14,6 +14,26 @@ body {
     text-align: center;
 }
 
+/* LANGUAGE SWITCH */
+.lang {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+}
+
+.lang a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.lang a:hover {
+    color: #fff;
+}
+
+/* HEADER */
 header {
     padding: 60px 20px 80px 20px;
     background: linear-gradient(to bottom, #000, #1a1a1a);
@@ -40,6 +60,7 @@ section {
     padding: 60px 20px;
 }
 
+/* PACKAGES */
 .packages {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +74,7 @@ section {
     padding: 30px;
     border-radius: 12px;
     width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .card:hover {
@@ -68,7 +89,6 @@ section {
 .price {
     font-size: 24px;
     margin: 15px 0;
-    color: #ffffff;
     font-weight: bold;
 }
 
@@ -79,13 +99,14 @@ button {
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 button:hover {
     background: #cccccc;
 }
 
+/* FOOTER */
 footer {
     padding: 40px 20px;
     background: #000;
@@ -97,10 +118,14 @@ footer {
 
 <body>
 
+<div class="lang">
+    <a href="index.html">EN</a> |
+    <a href="ru.html">RU</a> |
+    <a href="hy.html">HY</a>
+</div>
+
 <header>
-    <!-- LOGO -->
     <img src="GM_Experience.png" alt="GM Experience Logo" class="logo">
-    
     <h1>GM Experience</h1>
     <h2>Premium Local Services in Italy</h2>
     <p>Private assistance from arrival to authentic experiences.</p>

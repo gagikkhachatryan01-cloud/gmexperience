@@ -13,89 +13,58 @@ body {
     color: white;
 }
 
-/* MENU */
-.menu-icon {
-    font-size: 28px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1001;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #000;
 }
 
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.4s;
-    padding-top: 80px;
-    z-index: 1000;
-}
-
-.sidebar a {
-    padding: 15px 30px;
-    display: block;
+nav a {
     color: #ccc;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.3s;
 }
 
-.sidebar a:hover {
+nav a:hover {
     color: white;
 }
 
-/* HEADER */
 header {
     text-align: center;
-    padding: 120px 20px 60px 20px;
+    padding: 100px 20px 60px 20px;
 }
 
 .logo {
-    width: 280px;
+    width: 300px;
     max-width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.hero {
-    background: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5') center/cover no-repeat;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
-.hero h1 {
-    font-size: 48px;
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-}
-
-/* SECTIONS */
 section {
-    padding: 80px 10%;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.4s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
+.card {
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    width: 280px;
 }
 
 footer {
@@ -109,60 +78,52 @@ footer {
 
 <body>
 
-<div class="menu-icon" onclick="openMenu()">☰</div>
-
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" onclick="closeMenu()">Close ✕</a>
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Our Services</a>
-    <a href="#">Packages</a>
-    <a href="#">Rome & Beyond</a>
-    <a href="#">Luxury Shopping</a>
-    <a href="#">Contact</a>
-</div>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="monumenti.html">Monuments</a>
+    <a href="servizi.html">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 <header>
-    <img src="GM_Experience.png" alt="GM Experience Logo" class="logo">
+    <img src="GM_Experience.png" class="logo" alt="GM Experience">
+    <h1>Premium Assistance in Italy</h1>
+    <p>Private support from arrival to unforgettable experiences.</p>
 </header>
 
-<div class="hero">
-    <h1>Discover Italy in a Premium Way</h1>
-</div>
-
 <section>
-    <h2>Rome & Beyond</h2>
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee" alt="Colosseum">
-        <img src="https://images.unsplash.com/photo-1526481280691-3c46915f62b5" alt="Trevi Fountain">
-        <img src="https://images.unsplash.com/photo-1549899593-bf5b6e0a9c0d" alt="Pantheon">
-        <img src="https://images.unsplash.com/photo-1506973035872-a4f23ad02ef4" alt="Piazza di Spagna">
-        <img src="https://images.unsplash.com/photo-1601582589907-f92af5ed4db8" alt="Altare della Patria">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Amalfi Coast">
+    <h2>Our Packages</h2>
+
+    <div class="packages">
+        <div class="card">
+            <h3>Basic</h3>
+            <p>Airport transfer<br>Language assistance<br>Arrival support</p>
+            <strong>€120</strong>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <p>Everything in Basic<br>Dining experiences<br>Attraction assistance</p>
+            <strong>€480</strong>
+        </div>
+
+        <div class="card">
+            <h3>Gold</h3>
+            <p>Everything in Premium<br>Restaurant accompaniments<br>Personalized itinerary</p>
+            <strong>€980</strong>
+        </div>
     </div>
 </section>
 
-<section>
-    <h2>Shopping Experience</h2>
-    <p>Castel Romano • Valmontone • Luxury outlets near Venice</p>
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Outlet">
-        <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" alt="Luxury Store">
-    </div>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Phone: +39 3895368924</p>
+    <p>Email: gmexperience2026@gmail.com</p>
 </section>
 
 <footer>
-    <p>© 2026 GM Experience. All rights reserved.</p>
+    © 2026 GM Experience. All rights reserved.
 </footer>
-
-<script>
-function openMenu() {
-    document.getElementById("mySidebar").style.width = "250px";
-}
-function closeMenu() {
-    document.getElementById("mySidebar").style.width = "0";
-}
-</script>
 
 </body>
 </html>

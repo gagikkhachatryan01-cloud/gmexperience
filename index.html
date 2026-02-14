@@ -3,176 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GM Experience | Premium Local Services in Italy</title>
+<title>GM Experience | Premium Services in Italy</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #111;
+    background-color: #000;
     color: white;
-    text-align: center;
 }
 
-/* LANGUAGE SWITCH */
-.lang {
-    position: absolute;
+/* MENU */
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    position: fixed;
     top: 20px;
-    right: 20px;
-    font-size: 14px;
+    left: 20px;
+    z-index: 1001;
 }
 
-.lang a {
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 80px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 30px;
+    display: block;
     color: #ccc;
     text-decoration: none;
-    margin: 0 5px;
+    font-size: 18px;
     transition: 0.3s;
 }
 
-.lang a:hover {
-    color: #fff;
+.sidebar a:hover {
+    color: white;
 }
 
 /* HEADER */
 header {
-    padding: 60px 20px 80px 20px;
-    background: linear-gradient(to bottom, #000, #1a1a1a);
+    text-align: center;
+    padding: 120px 20px 60px 20px;
 }
 
 .logo {
-    width: 180px;
-    max-width: 80%;
+    width: 280px;
+    max-width: 90%;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-h2 {
-    font-weight: normal;
-    color: #ccc;
-}
-
-section {
-    padding: 60px 20px;
-}
-
-/* PACKAGES */
-.packages {
+.hero {
+    background: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5') center/cover no-repeat;
+    height: 70vh;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
+    text-align: center;
 }
 
-.card {
-    background: #1f1f1f;
-    padding: 30px;
-    border-radius: 12px;
-    width: 280px;
-    transition: 0.3s ease;
+.hero h1 {
+    font-size: 48px;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(255,255,255,0.08);
+/* SECTIONS */
+section {
+    padding: 80px 10%;
+    text-align: center;
 }
 
-.card h3 {
-    margin-top: 0;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.price {
-    font-size: 24px;
-    margin: 15px 0;
-    font-weight: bold;
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s;
 }
 
-button {
-    background: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
-button:hover {
-    background: #cccccc;
-}
-
-/* FOOTER */
 footer {
-    padding: 40px 20px;
-    background: #000;
-    font-size: 14px;
-    color: #888;
+    padding: 40px;
+    text-align: center;
+    background: #111;
+    color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<div class="lang">
-    <a href="index.html">EN</a> |
-    <a href="ru.html">RU</a> |
-    <a href="hy.html">HY</a>
+<div class="menu-icon" onclick="openMenu()">☰</div>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" onclick="closeMenu()">Close ✕</a>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Our Services</a>
+    <a href="#">Packages</a>
+    <a href="#">Rome & Beyond</a>
+    <a href="#">Luxury Shopping</a>
+    <a href="#">Contact</a>
 </div>
 
 <header>
     <img src="GM_Experience.png" alt="GM Experience Logo" class="logo">
-    <h1>GM Experience</h1>
-    <h2>Premium Local Services in Italy</h2>
-    <p>Private assistance from arrival to authentic experiences.</p>
 </header>
 
-<section>
-    <h2>About Us</h2>
-    <p>Two brothers living in Italy since 2012, providing trusted local support for international travelers.</p>
-</section>
+<div class="hero">
+    <h1>Discover Italy in a Premium Way</h1>
+</div>
 
 <section>
-    <h2>Our Packages</h2>
-
-    <div class="packages">
-        <div class="card">
-            <h3>Basic</h3>
-            <div class="price">€120</div>
-            <p>Airport transfer<br>Language assistance<br>Arrival support</p>
-        </div>
-
-        <div class="card">
-            <h3>Premium</h3>
-            <div class="price">€480</div>
-            <p>Everything in Basic<br>2 Dining Experiences<br>Attraction assistance</p>
-        </div>
-
-        <div class="card">
-            <h3>Gold</h3>
-            <div class="price">€980</div>
-            <p>Everything in Premium<br>Up to 5 dining accompaniments<br>Personalized itinerary</p>
-        </div>
+    <h2>Rome & Beyond</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee" alt="Colosseum">
+        <img src="https://images.unsplash.com/photo-1526481280691-3c46915f62b5" alt="Trevi Fountain">
+        <img src="https://images.unsplash.com/photo-1549899593-bf5b6e0a9c0d" alt="Pantheon">
+        <img src="https://images.unsplash.com/photo-1506973035872-a4f23ad02ef4" alt="Piazza di Spagna">
+        <img src="https://images.unsplash.com/photo-1601582589907-f92af5ed4db8" alt="Altare della Patria">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Amalfi Coast">
     </div>
 </section>
 
 <section>
-    <h2>Contact</h2>
-    <p>Phone: +39 3895368924</p>
-    <p>Email: gmexperience2026@gmail.com</p>
-
-    <a href="https://wa.me/393895368924" target="_blank">
-        <button>Contact us on WhatsApp</button>
-    </a>
+    <h2>Shopping Experience</h2>
+    <p>Castel Romano • Valmontone • Luxury outlets near Venice</p>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Outlet">
+        <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" alt="Luxury Store">
+    </div>
 </section>
 
 <footer>
     <p>© 2026 GM Experience. All rights reserved.</p>
 </footer>
+
+<script>
+function openMenu() {
+    document.getElementById("mySidebar").style.width = "250px";
+}
+function closeMenu() {
+    document.getElementById("mySidebar").style.width = "0";
+}
+</script>
 
 </body>
 </html>

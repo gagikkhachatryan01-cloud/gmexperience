@@ -13,34 +13,47 @@ body {
     color: white;
 }
 
+/* NAVIGATION */
 nav {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
     background: #000;
 }
 
-nav a {
-    color: #ccc;
+.menu a {
+    margin-right: 30px;
     text-decoration: none;
-    font-size: 16px;
+    color: #ccc;
     transition: 0.3s;
 }
 
-nav a:hover {
+.menu a:hover {
     color: white;
 }
 
+.lang a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.lang a:hover {
+    color: white;
+}
+
+/* HEADER */
 header {
     text-align: center;
     padding: 100px 20px 60px 20px;
 }
 
 .logo {
-    width: 300px;
-    max-width: 90%;
-    margin-bottom: 30px;
+    width: 380px;
+    max-width: 95%;
+    margin-bottom: 40px;
 }
 
 h1 {
@@ -49,10 +62,11 @@ h1 {
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
+/* PACKAGES */
 .packages {
     display: flex;
     flex-wrap: wrap;
@@ -67,11 +81,36 @@ section {
     width: 280px;
 }
 
-footer {
-    padding: 40px;
-    text-align: center;
+/* BUTTONS */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ccc;
+}
+
+/* REVIEWS */
+.review {
     background: #111;
-    color: #777;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    padding: 50px 20px;
+    background: #111;
+    text-align: center;
 }
 </style>
 </head>
@@ -79,10 +118,20 @@ footer {
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="monumenti.html">Monuments</a>
-    <a href="servizi.html">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="monumenti.html">Monuments</a>
+        <a href="servizi.html">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="lang">
+        <a href="index.html">EN</a>
+        <a href="it.html">IT</a>
+        <a href="ru.html">RU</a>
+        <a href="hy.html">HY</a>
+    </div>
 </nav>
 
 <header>
@@ -115,10 +164,36 @@ footer {
     </div>
 </section>
 
+<section id="reviews">
+    <h2>Client Reviews</h2>
+
+    <div class="review">
+        <p>"Exceptional service and unforgettable stay in Rome."</p>
+        <strong>- Michael, USA</strong>
+    </div>
+
+    <div class="review">
+        <p>"Highly professional and always available."</p>
+        <strong>- Anna, Germany</strong>
+    </div>
+
+    <a class="button" href="mailto:gmexperience2026@gmail.com?subject=My Experience with GM Experience">
+        Tell us about your experience
+    </a>
+</section>
+
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Phone: +39 3895368924</p>
-    <p>Email: gmexperience2026@gmail.com</p>
+    <h2>Contact Us</h2>
+
+    <a class="button" href="mailto:gmexperience2026@gmail.com">
+        Send us an Email
+    </a>
+
+    <br><br>
+
+    <a class="button" href="https://wa.me/393895368924" target="_blank">
+        Chat on WhatsApp
+    </a>
 </section>
 
 <footer>

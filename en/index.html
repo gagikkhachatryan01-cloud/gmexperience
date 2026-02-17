@@ -8,63 +8,63 @@
 <style>
 body {
     margin: 0;
-    background: #000;
     font-family: Arial, sans-serif;
     color: white;
-    perspective: 1200px;
 }
 
 nav {
+    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 30px 80px;
+    z-index: 3;
 }
 
 nav a {
-    color: #aaa;
+    color: white;
     text-decoration: none;
     margin-left: 40px;
 }
 
-nav a:hover {
-    color: white;
-}
-
 .hero {
     height: 100vh;
+    background: url('../images/roma/colosseo.jpg') center/cover fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.hero-box {
-    background: #111;
-    padding: 80px;
-    border-radius: 20px;
     text-align: center;
-    transform-style: preserve-3d;
-    transition: 0.6s;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    position: relative;
 }
 
-.hero-box:hover {
-    transform: rotateY(6deg) rotateX(6deg);
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
 }
 
-.hero-box h1 {
-    font-size: 48px;
+.hero h1,
+.hero p,
+.hero a {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
-.hero-box p {
-    max-width: 500px;
-    margin-bottom: 30px;
-    color: #bbb;
+.hero p {
+    max-width: 600px;
+    margin-bottom: 40px;
 }
 
 .button {
-    padding: 12px 30px;
-    border: 1px solid #333;
+    padding: 14px 35px;
+    border: 1px solid white;
     text-decoration: none;
     color: white;
     transition: 0.3s;
@@ -90,14 +90,12 @@ nav a:hover {
 </nav>
 
 <section class="hero">
-    <div class="hero-box">
-        <h1>Effortless Luxury, Tailored to You</h1>
-        <p>
-            Private assistance and curated experiences across Italy —
-            handled with precision, discretion and care.
-        </p>
-        <a href="services.html" class="button">Discover Our Services</a>
-    </div>
+    <h1>Effortless Luxury, Tailored to You</h1>
+    <p>
+        Private assistance and curated experiences across Italy —
+        handled with precision, discretion and care.
+    </p>
+    <a href="services.html" class="button">Discover Our Services</a>
 </section>
 
 </body>

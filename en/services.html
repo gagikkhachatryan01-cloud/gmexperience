@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services | GM Experience</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-
-/* ===== GLOBAL ===== */
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #0f0f0f;
+    background: #0f0f0f;
     color: #ffffff;
 }
 
@@ -24,39 +22,35 @@ h1, h2, h3 {
 }
 
 section {
-    padding: 100px 10%;
+    padding: 120px 12%;
 }
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===== NAVBAR ===== */
 
 nav {
     position: fixed;
     width: 100%;
+    padding: 30px 8%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 5%;
+    background: rgba(0,0,0,0.85);
     box-sizing: border-box;
-    z-index: 1000;
-    background-color: rgba(0,0,0,0.8);
 }
 
 nav a {
     margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 nav a:hover {
     color: #c6a75e;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 
 .hero {
-    height: 80vh;
+    height: 70vh;
     background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
@@ -65,71 +59,87 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 54px;
 }
 
-/* ===== CONTENT SECTIONS ===== */
+/* CONTENT */
 
-.dark-section {
-    background-color: #0f0f0f;
-}
-
-.light-section {
-    background-color: #ffffff;
-    color: #0f0f0f;
-}
-
-.content-wrapper {
-    max-width: 900px;
+.content {
+    max-width: 800px;
     margin: auto;
     text-align: center;
 }
 
-.content-wrapper p {
-    line-height: 1.7;
-    font-size: 18px;
+.content p {
+    line-height: 1.8;
+    font-size: 17px;
+    margin-top: 25px;
+    color: #d6d6d6;
 }
 
-/* ===== PACKAGES ===== */
+/* LIGHT SECTION */
+
+.light {
+    background: #ffffff;
+    color: #0f0f0f;
+}
+
+/* PACKAGES */
 
 .packages {
-    background-color: #111;
+    background: #111;
     text-align: center;
 }
 
 .package-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 50px;
+    margin-top: 70px;
 }
 
 .package-card {
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px;
-    transition: 0.3s;
+    padding: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.package-card:hover {
-    border-color: #c6a75e;
-    transform: translateY(-8px);
+.package-card h3 {
+    margin-bottom: 15px;
+}
+
+.package-card p {
+    font-size: 15px;
+    color: #bdbdbd;
 }
 
 .btn {
-    border: 1px solid #c6a75e;
-    padding: 12px 30px;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 60px;
+    padding: 12px 30px;
+    border: 1px solid #c6a75e;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    background-color: #c6a75e;
+    background: #c6a75e;
     color: #0f0f0f;
 }
 
-/* ===== RESPONSIVE ===== */
+footer {
+    background: black;
+    text-align: center;
+    padding: 50px;
+    font-size: 13px;
+    color: #999;
+}
 
-@media(max-width: 768px) {
+@media(max-width:768px){
+    section {
+        padding: 90px 8%;
+    }
+
     .hero h1 {
         font-size: 36px;
     }
@@ -154,25 +164,25 @@ nav a:hover {
     <h1>Our Services</h1>
 </section>
 
-<section class="dark-section">
-    <div class="content-wrapper">
+<section>
+    <div class="content">
         <h2>Private Assistance & Mobility</h2>
         <p>
-            Seamless private assistance within Rome and selected nearby destinations.
-            From your hotel to the Vatican Museums, exclusive restaurants,
-            cultural landmarks or private events — every movement is handled
+            Seamless private assistance across Rome and selected nearby destinations.
+            From your hotel to the Vatican Museums, refined dining venues,
+            cultural landmarks or private engagements — every movement is handled
             with discretion and precision.
         </p>
     </div>
 </section>
 
-<section class="light-section">
-    <div class="content-wrapper">
+<section class="light">
+    <div class="content">
         <h2>Curated Experiences</h2>
         <p>
-            Personalized itineraries tailored around your schedule and preferences.
-            Private access to cultural sites, refined dining coordination and
-            exclusive local insights designed to elevate your stay in Rome.
+            Personalized itineraries designed around your preferences.
+            Exclusive reservations, private cultural access and tailored coordination
+            to elevate your stay in Rome.
         </p>
     </div>
 </section>
@@ -184,26 +194,17 @@ nav a:hover {
 
         <div class="package-card">
             <h3>Half Day Experience</h3>
-            <p>
-                Dedicated private assistance for selected destinations
-                and refined mobility within Rome.
-            </p>
+            <p>Focused private assistance within Rome for selected destinations.</p>
         </div>
 
         <div class="package-card">
             <h3>Full Day Experience</h3>
-            <p>
-                Comprehensive support and tailored itinerary
-                across Rome and nearby surroundings.
-            </p>
+            <p>Dedicated refined service across Rome and nearby surroundings.</p>
         </div>
 
         <div class="package-card">
             <h3>Custom Experience</h3>
-            <p>
-                Fully personalized assistance based on your preferences,
-                schedule and level of exclusivity required.
-            </p>
+            <p>Fully tailored assistance based on your schedule and expectations.</p>
         </div>
 
     </div>
@@ -211,7 +212,7 @@ nav a:hover {
     <a href="contact.html" class="btn">Request Your Experience</a>
 </section>
 
-<footer style="background:black; text-align:center; padding:40px;">
+<footer>
     © 2026 GM Experience — Private Assistance in Rome
 </footer>
 

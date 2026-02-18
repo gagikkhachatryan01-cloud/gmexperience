@@ -9,14 +9,16 @@
 
 <style>
 
+/* ===== GLOBAL ===== */
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: #0f0f0f;
-    color: white;
+    color: #ffffff;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR (IDENTICA ALLA HOME) ===== */
 
 nav {
     position: fixed;
@@ -42,14 +44,27 @@ nav a:hover {
     color: #c6a75e;
 }
 
-.active {
-    color: #c6a75e;
+.nav-links {
+    display: flex;
 }
 
-/* HEADER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+/* ===== HEADER ===== */
 
 .page-header {
-    padding: 160px 12% 60px 12%;
+    padding: 160px 12% 60px;
     text-align: center;
 }
 
@@ -59,10 +74,10 @@ nav a:hover {
     letter-spacing: 2px;
 }
 
-/* CARDS */
+/* ===== SERVICE CARDS ===== */
 
 .services {
-    padding: 0 12% 120px 12%;
+    padding: 0 12% 120px;
 }
 
 .service-card {
@@ -70,6 +85,11 @@ nav a:hover {
     padding: 50px;
     margin-bottom: 40px;
     border-radius: 12px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
 }
 
 .service-card h2 {
@@ -89,7 +109,6 @@ nav a:hover {
     border: 1px solid #c6a75e;
     text-decoration: none;
     color: white;
-    letter-spacing: 1px;
 }
 
 .btn:hover {
@@ -97,10 +116,46 @@ nav a:hover {
     color: #0f0f0f;
 }
 
+/* ===== RESPONSIVE ===== */
+
 @media(max-width:768px){
-    nav { padding: 20px; }
-    .page-header { padding: 140px 20px 40px 20px; }
-    .services { padding: 0 20px 80px 20px; }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0f0f0f;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 40px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        margin-left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .page-header {
+        padding: 140px 20px 40px;
+    }
+
+    .services {
+        padding: 0 20px 80px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
 }
 
 </style>
@@ -110,12 +165,19 @@ nav a:hover {
 
 <nav>
     <div>GM EXPERIENCE</div>
-    <div>
+
+    <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="experiences.html">Experiences</a>
-        <a href="services.html" class="active">Services</a>
+        <a href="services.html">Services</a>
         <a href="shopping.html">Luxury Shopping</a>
         <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </nav>
 
@@ -125,46 +187,47 @@ nav a:hover {
 
 <section class="services">
 
-    <div class="service-card">
-        <h2>Package I — Essential Welcome</h2>
-        <ul>
-            <li>Airport pickup with private luxury vehicle</li>
-            <li>Transfer from airport to hotel</li>
-            <li>Phone assistance before and after the flight</li>
-            <li>Professional travel guidance</li>
-        </ul>
-        <a href="https://wa.me/393895368924" target="_blank" class="btn">
-            Request Information
-        </a>
-    </div>
+<div class="service-card">
+<h2>Package I — Essential Welcome</h2>
+<ul>
+<li>Airport pickup with private luxury vehicle</li>
+<li>Transfer from airport to hotel</li>
+<li>Phone assistance before and after the flight</li>
+<li>Professional travel guidance</li>
+</ul>
+<a href="https://wa.me/393895368924" target="_blank" class="btn">Request Information</a>
+</div>
 
-    <div class="service-card">
-        <h2>Package II — Premium Experience</h2>
-        <ul>
-            <li>Everything included in Package I</li>
-            <li>Two private transfers to destinations of your choice</li>
-            <li>Villa d’Este, Castel Romano, Valmontone</li>
-            <li>24h phone assistance during your stay</li>
-        </ul>
-        <a href="https://wa.me/393895368924" target="_blank" class="btn">
-            Request Information
-        </a>
-    </div>
+<div class="service-card">
+<h2>Package II — Premium Experience</h2>
+<ul>
+<li>Everything included in Package I</li>
+<li>Two private transfers of your choice</li>
+<li>24h phone assistance during your stay</li>
+</ul>
+<a href="https://wa.me/393895368924" target="_blank" class="btn">Request Information</a>
+</div>
 
-    <div class="service-card">
-        <h2>Package III — Exclusive Luxury</h2>
-        <ul>
-            <li>Everything included in Package II</li>
-            <li>Up to 5 private transfers wherever you prefer</li>
-            <li>Full personalized coordination</li>
-            <li>Dedicated premium support</li>
-        </ul>
-        <a href="https://wa.me/393895368924" target="_blank" class="btn">
-            Request Information
-        </a>
-    </div>
+<div class="service-card">
+<h2>Package III — Exclusive Luxury</h2>
+<ul>
+<li>Everything included in Package II</li>
+<li>Up to 5 private transfers</li>
+<li>Full personalized coordination</li>
+</ul>
+<a href="https://wa.me/393895368924" target="_blank" class="btn">Request Information</a>
+</div>
 
 </section>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>

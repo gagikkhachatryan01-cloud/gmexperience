@@ -9,14 +9,16 @@
 
 <style>
 
+/* ===== GLOBAL ===== */
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: #0f0f0f;
-    color: white;
+    color: #ffffff;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR (IDENTICA ALLE ALTRE PAGINE) ===== */
 
 nav {
     position: fixed;
@@ -42,10 +44,27 @@ nav a:hover {
     color: #c6a75e;
 }
 
-/* PAGE HEADER */
+.nav-links {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+/* ===== HEADER ===== */
 
 .page-header {
-    padding: 160px 12% 80px 12%;
+    padding: 160px 12% 80px;
     text-align: center;
 }
 
@@ -55,10 +74,10 @@ nav a:hover {
     letter-spacing: 2px;
 }
 
-/* SECTION */
+/* ===== SECTION ===== */
 
 .section {
-    padding: 60px 12% 100px 12%;
+    padding: 60px 12% 100px;
 }
 
 .section h2 {
@@ -66,7 +85,7 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
-/* GALLERY */
+/* ===== GALLERY ===== */
 
 .gallery {
     display: grid;
@@ -101,20 +120,41 @@ nav a:hover {
     color: #0f0f0f;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 
 @media(max-width:768px){
 
-    nav {
-        padding: 20px;
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0f0f0f;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 40px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        margin-left: 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .page-header {
-        padding: 140px 20px 60px 20px;
+        padding: 140px 20px 60px;
     }
 
     .section {
-        padding: 40px 20px 80px 20px;
+        padding: 40px 20px 80px;
     }
 
     .page-header h1 {
@@ -129,12 +169,19 @@ nav a:hover {
 
 <nav>
     <div>GM EXPERIENCE</div>
-    <div>
+
+    <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
         <a href="experiences.html">Experiences</a>
+        <a href="services.html">Services</a>
         <a href="shopping.html">Luxury Shopping</a>
         <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </nav>
 
@@ -145,10 +192,10 @@ nav a:hover {
 <section class="section">
     <h2>Castel Romano Designer Outlet</h2>
     <div class="gallery">
-        <img src="../images/outlets/castel_romano/outlet-castel-romano1.jpg">
-        <img src="../images/outlets/castel_romano/outlet-castel-romano2.jpg">
-        <img src="../images/outlets/castel_romano/outlet-castel-romano3.jpg">
-        <img src="../images/outlets/castel_romano/outlet-castel-romano4.jpg">
+        <img src="images/outlets/castel_romano/outlet-castel-romano1.jpg">
+        <img src="images/outlets/castel_romano/outlet-castel-romano2.jpg">
+        <img src="images/outlets/castel_romano/outlet-castel-romano3.jpg">
+        <img src="images/outlets/castel_romano/outlet-castel-romano4.jpg">
     </div>
     <a href="https://wa.me/393895368924" target="_blank" class="btn">
         Book Private Transfer
@@ -158,9 +205,9 @@ nav a:hover {
 <section class="section">
     <h2>Valmontone Outlet</h2>
     <div class="gallery">
-        <img src="../images/outlets/valmontone/valmontone-outlet1.jpg">
-        <img src="../images/outlets/valmontone/valmontone-outlet2.jpg">
-        <img src="../images/outlets/valmontone/valmontone-outlet3.jpg">
+        <img src="images/outlets/valmontone/valmontone-outlet1.jpg">
+        <img src="images/outlets/valmontone/valmontone-outlet2.jpg">
+        <img src="images/outlets/valmontone/valmontone-outlet3.jpg">
     </div>
     <a href="https://wa.me/393895368924" target="_blank" class="btn">
         Book Private Transfer
@@ -170,15 +217,24 @@ nav a:hover {
 <section class="section">
     <h2>The Mall Firenze — Luxury Brands</h2>
     <div class="gallery">
-        <img src="../images/outlets/the_mall_firenze/the-mall-firenze1.jpg">
-        <img src="../images/outlets/the_mall_firenze/the-mall-firenze2.jpg">
-        <img src="../images/outlets/the_mall_firenze/the-mall-firenze3.jpg">
-        <img src="../images/outlets/the_mall_firenze/the-mall-firenze4.jpg">
+        <img src="images/outlets/the_mall_firenze/the-mall-firenze1.jpg">
+        <img src="images/outlets/the_mall_firenze/the-mall-firenze2.jpg">
+        <img src="images/outlets/the_mall_firenze/the-mall-firenze3.jpg">
+        <img src="images/outlets/the_mall_firenze/the-mall-firenze4.jpg">
     </div>
     <a href="https://wa.me/393895368924" target="_blank" class="btn">
         Book Luxury Shopping Experience
     </a>
 </section>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>

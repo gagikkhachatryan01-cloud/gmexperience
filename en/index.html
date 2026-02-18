@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GM Experience | Effortless Luxury in Rome</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -17,6 +16,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #0f0f0f;
     color: #ffffff;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -42,7 +42,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 80px;
+    padding: 30px 5%;
+    box-sizing: border-box;
     z-index: 10;
     transition: 0.3s;
 }
@@ -51,8 +52,12 @@ nav.scrolled {
     background-color: #0f0f0f;
 }
 
+nav div:last-child {
+    display: flex;
+    gap: 30px;
+}
+
 nav a {
-    margin-left: 40px;
     font-weight: 300;
     transition: 0.3s;
 }
@@ -216,8 +221,9 @@ footer span {
 /* ===== RESPONSIVE ===== */
 
 @media(max-width: 768px) {
+
     nav {
-        padding: 20px 30px;
+        padding: 20px 5%;
     }
 
     .hero h1 {
@@ -226,6 +232,15 @@ footer span {
 
     section {
         padding: 70px 8%;
+    }
+
+    .hero {
+        background-position: 60% center;
+    }
+
+    .rome {
+        background-position: 60% center;
+        background-attachment: scroll;
     }
 }
 
@@ -244,8 +259,6 @@ footer span {
     </div>
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
     <div class="hero-content">
         <h1>Effortless Luxury in Rome</h1>
@@ -256,8 +269,6 @@ footer span {
         <a href="#" class="btn">Discover Our Services</a>
     </div>
 </section>
-
-<!-- ABOUT -->
 
 <section class="about">
     <h2>Discreet. Precise. Personal.</h2>
@@ -271,8 +282,6 @@ footer span {
         ensuring the highest level of quality and responsiveness.
     </p>
 </section>
-
-<!-- SERVICES -->
 
 <section class="services">
     <h2>Our Services</h2>
@@ -307,8 +316,6 @@ footer span {
 
     </div>
 </section>
-
-<!-- ROME IMMERSIVE SECTION -->
 
 <section class="rome">
     <div class="rome-content">

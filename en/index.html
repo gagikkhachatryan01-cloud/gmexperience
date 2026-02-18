@@ -18,10 +18,10 @@ body {
     color: #ffffff;
     overflow-x: hidden;
 }
-    html {
+
+html {
     scroll-behavior: smooth;
 }
-
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
@@ -31,6 +31,7 @@ h1, h2, h3 {
 
 section {
     padding: 100px 10%;
+    scroll-margin-top: 100px;
 }
 
 a {
@@ -88,7 +89,6 @@ nav.scrolled {
     width: 25px;
     height: 2px;
     background-color: white;
-    transition: 0.3s;
 }
 
 /* ===== HERO ===== */
@@ -147,13 +147,6 @@ nav.scrolled {
     text-align: center;
 }
 
-.about p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
 /* ===== SERVICES ===== */
 
 .services {
@@ -182,15 +175,6 @@ nav.scrolled {
     transform: translateY(-10px);
 }
 
-.service-card h3 {
-    margin-bottom: 20px;
-}
-
-.service-card p {
-    font-weight: 300;
-    line-height: 1.6;
-}
-
 /* ===== ROME SECTION ===== */
 
 .rome {
@@ -211,15 +195,20 @@ nav.scrolled {
     z-index: 2;
 }
 
-.rome h2 {
-    margin-bottom: 20px;
+/* ===== CONTACT ===== */
+
+.contact {
+    background-color: #ffffff;
+    color: #0f0f0f;
+    text-align: center;
 }
 
-.rome p {
-    max-width: 700px;
-    margin: auto;
+.contact h2 {
+    margin-bottom: 30px;
+}
+
+.contact p {
     margin-bottom: 40px;
-    font-weight: 300;
 }
 
 /* ===== FOOTER ===== */
@@ -276,12 +265,7 @@ footer span {
         padding: 70px 8%;
     }
 
-    .hero {
-        background-position: 60% center;
-    }
-
     .rome {
-        background-position: 60% center;
         background-attachment: scroll;
     }
 }
@@ -296,9 +280,9 @@ footer span {
 
     <div class="nav-links" id="navLinks">
         <a href="#">Home</a>
-        <a href="#">Experiences</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#experience">Experiences</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
     </div>
 
     <div class="hamburger" id="hamburger">
@@ -312,8 +296,7 @@ footer span {
     <div class="hero-content">
         <h1>Effortless Luxury in Rome</h1>
         <p>
-            Private assistance, refined mobility and curated experiences across Rome
-            and its surroundings — handled with precision and discretion.
+            Private assistance and curated experiences across Rome and its surroundings.
         </p>
         <a href="#services" class="btn">Discover Our Services</a>
     </div>
@@ -322,42 +305,26 @@ footer span {
 <section class="about">
     <h2>Discreet. Precise. Personal.</h2>
     <p>
-        GM Experience provides tailored private assistance in Rome for clients who
-        expect seamless execution and refined service. From your hotel to the
-        Vatican Museums, from exclusive restaurants to cultural landmarks and
-        private events, every movement is managed with care and elegance.
-        <br><br>
-        Services are available within Rome and selected nearby destinations,
-        ensuring the highest level of quality and responsiveness.
+        From your hotel to the Vatican Museums, from exclusive restaurants
+        to cultural landmarks and private events, every movement is managed
+        with elegance and discretion.
     </p>
 </section>
 
-<section class="services" id="sercices">
+<section class="services" id="services">
     <h2>Our Services</h2>
     <div class="service-grid">
         <div class="service-card">
             <h3>Private Assistance & Mobility</h3>
-            <p>
-                Seamless support from your hotel to the Vatican Museums,
-                fine dining venues, cultural landmarks and selected destinations
-                within Rome and nearby surroundings.
-            </p>
+            <p>Hotel to Vatican, restaurants, events and selected destinations in Rome.</p>
         </div>
-
         <div class="service-card">
             <h3>Curated Experiences</h3>
-            <p>
-                Personalized itineraries, private museum visits, exclusive
-                reservations and refined access designed around your preferences.
-            </p>
+            <p>Personalized itineraries and exclusive cultural access.</p>
         </div>
-
         <div class="service-card">
             <h3>Dedicated Support</h3>
-            <p>
-                Discreet coordination and attentive assistance to ensure every
-                detail is handled with precision.
-            </p>
+            <p>Discreet coordination and refined service.</p>
         </div>
     </div>
 </section>
@@ -365,12 +332,15 @@ footer span {
 <section class="rome" id="experience">
     <div class="rome-content">
         <h2>Rome, Seamlessly Connected</h2>
-        <p>
-            Whether it is a private visit to the Vatican or an evening in
-            Trastevere, your journey is handled with elegance and attention to detail.
-        </p>
-        <a href="#experience" class="btn">Plan Your Experience</a>
+        <p>Your journey handled with precision and elegance.</p>
+        <a href="#contact" class="btn">Plan Your Experience</a>
     </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>To plan your tailored experience in Rome, get in touch with us.</p>
+    <a href="mailto:info@gmexperience.com" class="btn">Send an Email</a>
 </section>
 
 <footer>

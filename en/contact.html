@@ -9,14 +9,16 @@
 
 <style>
 
+/* ===== GLOBAL ===== */
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: #0f0f0f;
-    color: white;
+    color: #ffffff;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR IDENTICA ===== */
 
 nav {
     position: fixed;
@@ -38,31 +40,39 @@ nav a {
     letter-spacing: 1px;
 }
 
-nav a:hover {
-    color: #c6a75e;
+nav a:hover { color: #c6a75e; }
+
+.nav-links { display: flex; }
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
 }
 
-.active {
-    color: #c6a75e;
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 
 .page-header {
-    padding: 160px 12% 60px 12%;
+    padding: 160px 12% 60px;
     text-align: center;
 }
 
 .page-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 48px;
-    letter-spacing: 2px;
 }
 
-/* CONTACT SECTION */
+/* ===== CONTENT ===== */
 
 .contact-section {
-    padding: 0 12% 120px 12%;
+    padding: 0 12% 120px;
     text-align: center;
 }
 
@@ -73,12 +83,10 @@ nav a:hover {
 }
 
 .btn {
-    display: inline-block;
     padding: 12px 30px;
     border: 1px solid #c6a75e;
     text-decoration: none;
     color: white;
-    letter-spacing: 1px;
 }
 
 .btn:hover {
@@ -86,21 +94,28 @@ nav a:hover {
     color: #0f0f0f;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 
 @media(max-width:768px){
-    nav { padding: 20px; }
-    .page-header { padding: 140px 20px 40px 20px; }
-    .contact-section { padding: 0 20px 80px 20px; }
-    .page-header h1 { font-size: 32px; }
-}
 
-footer {
-    background: black;
-    text-align: center;
-    padding: 50px;
-    font-size: 13px;
-    color: #999;
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0f0f0f;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 40px 0;
+        display: none;
+    }
+
+    .nav-links.active { display: flex; }
+    .nav-links a { padding: 15px 0; margin-left: 0; }
+    .hamburger { display: flex; }
+
+    .page-header { padding: 140px 20px 40px; }
+    .contact-section { padding: 0 20px 80px; }
 }
 
 </style>
@@ -110,12 +125,19 @@ footer {
 
 <nav>
     <div>GM EXPERIENCE</div>
-    <div>
+
+    <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="experiences.html">Experiences</a>
         <a href="services.html">Services</a>
         <a href="shopping.html">Luxury Shopping</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </nav>
 
@@ -124,19 +146,18 @@ footer {
 </section>
 
 <section class="contact-section">
-    <p>
-        For private assistance and tailored luxury experiences,
-        contact us directly via WhatsApp.
-    </p>
-
-    <a href="https://wa.me/393895368924" target="_blank" class="btn">
-        Message Us on WhatsApp
-    </a>
+<p>For private assistance and tailored luxury experiences, contact us directly via WhatsApp.</p>
+<a href="https://wa.me/393895368924" target="_blank" class="btn">Message Us on WhatsApp</a>
 </section>
 
-<footer>
-    © 2026 GM Experience — Private Assistance in Rome
-</footer>
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>

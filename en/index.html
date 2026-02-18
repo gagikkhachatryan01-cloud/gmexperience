@@ -8,84 +8,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* ===== GLOBAL ===== */
-
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #0f0f0f;
-    color: #ffffff;
-    overflow-x: hidden;
+    background: #0f0f0f;
+    color: white;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-}
-
-section {
-    padding: 100px 10%;
-    scroll-margin-top: 100px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===== NAVBAR ===== */
 
 nav {
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 30px 5%;
     box-sizing: border-box;
     z-index: 1000;
-    transition: 0.3s;
 }
 
-nav.scrolled {
-    background-color: #0f0f0f;
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
 }
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 2px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a:hover {
-    color: #c6a75e;
-}
-
-/* Hamburger */
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 2px;
-    background-color: white;
-}
-
-/* ===== HERO ===== */
 
 .hero {
     height: 100vh;
@@ -94,313 +38,48 @@ nav.scrolled {
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero h1 {
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 60px;
 }
 
 .btn {
-    padding: 14px 40px;
     border: 1px solid #c6a75e;
-    transition: 0.3s;
+    padding: 12px 30px;
     display: inline-block;
     margin-top: 30px;
+    text-decoration: none;
+    color: white;
 }
 
 .btn:hover {
-    background-color: #c6a75e;
-    color: #0f0f0f;
-}
-
-/* ===== ABOUT ===== */
-
-.about {
-    background: white;
+    background: #c6a75e;
     color: black;
-    text-align: center;
 }
-
-/* ===== SERVICES ===== */
-
-.services {
-    background: #0f0f0f;
-    text-align: center;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
-}
-
-.service-card {
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px;
-    transition: 0.3s;
-}
-
-.service-card:hover {
-    border-color: #c6a75e;
-    transform: translateY(-8px);
-}
-
-/* ===== DESTINATIONS ===== */
-
-.destinations {
-    background: #111;
-    text-align: center;
-}
-
-.destination-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.destination-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.destination-card img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    transition: 0.4s;
-}
-
-.destination-card:hover img {
-    transform: scale(1.1);
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: 0.4s;
-}
-
-.destination-card:hover .overlay {
-    opacity: 1;
-}
-
-/* ===== PACKAGES ===== */
-
-.packages {
-    background: #0f0f0f;
-    text-align: center;
-}
-
-.package-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
-}
-
-.package-card {
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px;
-    transition: 0.3s;
-}
-
-.package-card:hover {
-    border-color: #c6a75e;
-    transform: translateY(-8px);
-}
-
-/* ===== ROME ===== */
-
-.rome {
-    background: url('../images/roma/colosseo.jpg') center/cover fixed;
-    text-align: center;
-    position: relative;
-}
-
-.rome::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.75);
-}
-
-.rome-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* ===== CONTACT ===== */
-
-.contact {
-    background: white;
-    color: black;
-    text-align: center;
-}
-
-/* ===== FOOTER ===== */
-
-footer {
-    background: black;
-    text-align: center;
-    padding: 40px;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media(max-width: 768px) {
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #0f0f0f;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        padding: 40px 0;
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .rome {
-        background-attachment: scroll;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<nav id="navbar">
-    <div class="logo">GM EXPERIENCE</div>
-    <div class="nav-links" id="navLinks">
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#packages">Packages</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+<nav>
+    <div>GM EXPERIENCE</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
     </div>
 </nav>
 
 <section class="hero">
     <div class="hero-content">
         <h1>Effortless Luxury in Rome</h1>
-        <a href="#services" class="btn">Discover Our Services</a>
+        <a href="services.html" class="btn">Explore Our Services</a>
     </div>
 </section>
-
-<section class="about">
-    <h2>Discreet. Precise. Personal.</h2>
-    <p>Tailored private assistance across Rome and nearby destinations.</p>
-</section>
-
-<section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-        <div class="service-card"><h3>Private Mobility</h3></div>
-        <div class="service-card"><h3>Curated Experiences</h3></div>
-        <div class="service-card"><h3>Dedicated Support</h3></div>
-    </div>
-</section>
-
-<section class="destinations" id="destinations">
-    <h2>Iconic Destinations</h2>
-    <div class="destination-grid">
-        <div class="destination-card">
-            <img src="../images/roma/altare.jpg">
-            <div class="overlay"><h3>Altare della Patria</h3></div>
-        </div>
-        <div class="destination-card">
-            <img src="../images/roma/trevi.jpg">
-            <div class="overlay"><h3>Fontana di Trevi</h3></div>
-        </div>
-        <div class="destination-card">
-            <img src="../images/roma/amalfi.jpg">
-            <div class="overlay"><h3>Amalfi Coast</h3></div>
-        </div>
-        <div class="destination-card">
-            <img src="../images/roma/villa.jpg">
-            <div class="overlay"><h3>Villa d’Este</h3></div>
-        </div>
-    </div>
-</section>
-
-<section class="packages" id="packages">
-    <h2>Available Packages</h2>
-    <div class="package-grid">
-        <div class="package-card"><h3>Half Day Experience</h3></div>
-        <div class="package-card"><h3>Full Day Experience</h3></div>
-        <div class="package-card"><h3>Custom Experience</h3></div>
-    </div>
-</section>
-
-<section class="rome">
-    <div class="rome-content">
-        <h2>Rome, Seamlessly Connected</h2>
-        <a href="#contact" class="btn">Plan Your Experience</a>
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <a href="mailto:info@gmexperience.com" class="btn">Send an Email</a>
-</section>
-
-<footer>
-    © 2026 GM Experience
-</footer>
-
-<script>
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
-
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
-window.addEventListener("scroll", function() {
-    const nav = document.getElementById("navbar");
-    nav.classList.toggle("scrolled", window.scrollY > 50);
-});
-</script>
 
 </body>
 </html>

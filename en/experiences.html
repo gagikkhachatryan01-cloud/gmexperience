@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GM Experience | Exclusive Experiences</title>
+<title>GM Experience | Experiences</title>
 
 <style>
 
@@ -25,21 +25,28 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 40px;
+    transition: 0.3s;
 }
 
-/* SECTIONS */
+nav a:hover {
+    color: #c6a75e;
+}
+
+.active {
+    color: #c6a75e;
+}
+
+/* SECTION */
 .section {
     padding: 100px 80px;
     text-align: center;
 }
 
 .section h1 {
-    font-size: 40px;
-    margin-bottom: 60px;
     color: #c6a75e;
+    margin-bottom: 60px;
 }
 
-/* GRID */
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -50,13 +57,7 @@ nav a {
     background: #151515;
     border-radius: 15px;
     overflow: hidden;
-    transition: 0.4s;
-}
-
-.experience-card a {
-    text-decoration: none;
-    color: white;
-    display: block;
+    transition: 0.3s;
 }
 
 .experience-card img {
@@ -65,28 +66,13 @@ nav a {
     object-fit: cover;
 }
 
-.experience-card h2 {
-    margin: 20px 0 10px;
-}
-
-.experience-card p {
-    padding: 0 20px 30px;
-    opacity: 0.8;
-}
-
 .experience-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
-/* MOBILE */
 @media(max-width:768px){
-    nav {
-        padding: 20px;
-    }
-
-    .section {
-        padding: 60px 20px;
-    }
+    nav { padding: 20px; }
+    .section { padding: 60px 20px; }
 }
 
 </style>
@@ -98,75 +84,15 @@ nav a {
     <div><strong>GM Experience</strong></div>
     <div>
         <a href="index.html">Home</a>
+        <a href="experiences.html" class="active">Experiences</a>
         <a href="services.html">Services</a>
+        <a href="shopping.html">Luxury Shopping</a>
         <a href="contact.html">Contact</a>
     </div>
 </nav>
 
-<!-- ROME CENTER -->
-
 <section class="section">
-    <h1>Rome – Historic Center</h1>
-
-    <div class="experience-grid">
-
-        <div class="experience-card">
-            <img src="images/roma/colosseo.jpg" alt="Colosseum">
-            <h2>Colosseum</h2>
-            <p>Private access to the icon of ancient Rome.</p>
-        </div>
-
-        <div class="experience-card">
-            <img src="images/roma/fontana_di_trevi.jpg" alt="Trevi Fountain">
-            <h2>Trevi Fountain</h2>
-            <p>An exclusive visit to Rome’s most romantic landmark.</p>
-        </div>
-
-        <div class="experience-card">
-            <img src="images/roma/pantheon.jpg" alt="Pantheon">
-            <h2>Pantheon</h2>
-            <p>Discover timeless architecture in total privacy.</p>
-        </div>
-
-        <div class="experience-card">
-            <img src="images/roma/altare_della_patria.jpg" alt="Altare della Patria">
-            <h2>Altare della Patria</h2>
-            <p>Panoramic views and imperial atmosphere.</p>
-        </div>
-
-        <div class="experience-card">
-            <img src="images/roma/piazza_di_spagna.jpg" alt="Piazza di Spagna">
-            <h2>Piazza di Spagna</h2>
-            <p>Experience elegance in the heart of Rome.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- OUTSIDE ROME -->
-
-<section class="section">
-    <h1>Beyond Rome – Extraordinary Destinations</h1>
-
-    <div class="experience-grid">
-
-        <div class="experience-card">
-            <a href="villa-d-este.html">
-                <img src="images/esperienze/villa_d_este/villa1.jpg" alt="Villa d'Este">
-                <h2>Villa d’Este</h2>
-                <p>Renaissance gardens and fountains in Tivoli.</p>
-            </a>
-        </div>
-
-        <div class="experience-card">
-            <a href="amalfi.html">
-                <img src="images/esperienze/amalfi/amalfi1.jpg" alt="Amalfi Coast">
-                <h2>Amalfi Coast</h2>
-                <p>A breathtaking escape along Italy’s most scenic coastline.</p>
-            </a>
-        </div>
-
-    </div>
+    <h1>Exclusive Experiences</h1>
 </section>
 
 </body>

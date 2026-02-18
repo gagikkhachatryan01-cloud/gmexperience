@@ -25,7 +25,6 @@ html {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
     letter-spacing: 1px;
 }
 
@@ -67,16 +66,11 @@ nav.scrolled {
     gap: 30px;
 }
 
-.nav-links a {
-    font-weight: 300;
-    transition: 0.3s;
-}
-
 .nav-links a:hover {
     color: #c6a75e;
 }
 
-/* HAMBURGER */
+/* Hamburger */
 
 .hamburger {
     display: none;
@@ -118,20 +112,14 @@ nav.scrolled {
 
 .hero h1 {
     font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    font-weight: 300;
-    margin-bottom: 40px;
 }
 
 .btn {
     padding: 14px 40px;
     border: 1px solid #c6a75e;
-    color: #ffffff;
     transition: 0.3s;
+    display: inline-block;
+    margin-top: 30px;
 }
 
 .btn:hover {
@@ -142,45 +130,112 @@ nav.scrolled {
 /* ===== ABOUT ===== */
 
 .about {
-    background-color: #ffffff;
-    color: #0f0f0f;
+    background: white;
+    color: black;
     text-align: center;
 }
 
 /* ===== SERVICES ===== */
 
 .services {
-    background-color: #0f0f0f;
-}
-
-.services h2 {
+    background: #0f0f0f;
     text-align: center;
-    margin-bottom: 70px;
 }
 
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
+    margin-top: 60px;
 }
 
 .service-card {
     border: 1px solid rgba(255,255,255,0.1);
     padding: 40px;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .service-card:hover {
     border-color: #c6a75e;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
-/* ===== ROME SECTION ===== */
+/* ===== DESTINATIONS ===== */
+
+.destinations {
+    background: #111;
+    text-align: center;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.destination-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.destination-card:hover .overlay {
+    opacity: 1;
+}
+
+/* ===== PACKAGES ===== */
+
+.packages {
+    background: #0f0f0f;
+    text-align: center;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.package-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    transition: 0.3s;
+}
+
+.package-card:hover {
+    border-color: #c6a75e;
+    transform: translateY(-8px);
+}
+
+/* ===== ROME ===== */
 
 .rome {
     background: url('../images/roma/colosseo.jpg') center/cover fixed;
-    position: relative;
     text-align: center;
+    position: relative;
 }
 
 .rome::after {
@@ -198,55 +253,33 @@ nav.scrolled {
 /* ===== CONTACT ===== */
 
 .contact {
-    background-color: #ffffff;
-    color: #0f0f0f;
+    background: white;
+    color: black;
     text-align: center;
-}
-
-.contact h2 {
-    margin-bottom: 30px;
-}
-
-.contact p {
-    margin-bottom: 40px;
 }
 
 /* ===== FOOTER ===== */
 
 footer {
-    background-color: #000000;
+    background: black;
     text-align: center;
-    padding: 50px 10%;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-footer span {
-    color: #c6a75e;
+    padding: 40px;
 }
 
 /* ===== RESPONSIVE ===== */
 
 @media(max-width: 768px) {
 
-    nav {
-        padding: 20px 5%;
-    }
-
     .nav-links {
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #0f0f0f;
+        background: #0f0f0f;
         flex-direction: column;
         width: 100%;
         text-align: center;
         padding: 40px 0;
         display: none;
-    }
-
-    .nav-links a {
-        padding: 15px 0;
     }
 
     .nav-links.active {
@@ -261,10 +294,6 @@ footer span {
         font-size: 38px;
     }
 
-    section {
-        padding: 70px 8%;
-    }
-
     .rome {
         background-attachment: scroll;
     }
@@ -277,14 +306,13 @@ footer span {
 
 <nav id="navbar">
     <div class="logo">GM EXPERIENCE</div>
-
     <div class="nav-links" id="navLinks">
         <a href="#">Home</a>
-        <a href="#experience">Experiences</a>
         <a href="#services">Services</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Packages</a>
         <a href="#contact">Contact</a>
     </div>
-
     <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
@@ -295,56 +323,69 @@ footer span {
 <section class="hero">
     <div class="hero-content">
         <h1>Effortless Luxury in Rome</h1>
-        <p>
-            Private assistance and curated experiences across Rome and its surroundings.
-        </p>
         <a href="#services" class="btn">Discover Our Services</a>
     </div>
 </section>
 
 <section class="about">
     <h2>Discreet. Precise. Personal.</h2>
-    <p>
-        From your hotel to the Vatican Museums, from exclusive restaurants
-        to cultural landmarks and private events, every movement is managed
-        with elegance and discretion.
-    </p>
+    <p>Tailored private assistance across Rome and nearby destinations.</p>
 </section>
 
 <section class="services" id="services">
     <h2>Our Services</h2>
     <div class="service-grid">
-        <div class="service-card">
-            <h3>Private Assistance & Mobility</h3>
-            <p>Hotel to Vatican, restaurants, events and selected destinations in Rome.</p>
+        <div class="service-card"><h3>Private Mobility</h3></div>
+        <div class="service-card"><h3>Curated Experiences</h3></div>
+        <div class="service-card"><h3>Dedicated Support</h3></div>
+    </div>
+</section>
+
+<section class="destinations" id="destinations">
+    <h2>Iconic Destinations</h2>
+    <div class="destination-grid">
+        <div class="destination-card">
+            <img src="../images/roma/altare.jpg">
+            <div class="overlay"><h3>Altare della Patria</h3></div>
         </div>
-        <div class="service-card">
-            <h3>Curated Experiences</h3>
-            <p>Personalized itineraries and exclusive cultural access.</p>
+        <div class="destination-card">
+            <img src="../images/roma/trevi.jpg">
+            <div class="overlay"><h3>Fontana di Trevi</h3></div>
         </div>
-        <div class="service-card">
-            <h3>Dedicated Support</h3>
-            <p>Discreet coordination and refined service.</p>
+        <div class="destination-card">
+            <img src="../images/roma/amalfi.jpg">
+            <div class="overlay"><h3>Amalfi Coast</h3></div>
+        </div>
+        <div class="destination-card">
+            <img src="../images/roma/villa.jpg">
+            <div class="overlay"><h3>Villa d’Este</h3></div>
         </div>
     </div>
 </section>
 
-<section class="rome" id="experience">
+<section class="packages" id="packages">
+    <h2>Available Packages</h2>
+    <div class="package-grid">
+        <div class="package-card"><h3>Half Day Experience</h3></div>
+        <div class="package-card"><h3>Full Day Experience</h3></div>
+        <div class="package-card"><h3>Custom Experience</h3></div>
+    </div>
+</section>
+
+<section class="rome">
     <div class="rome-content">
         <h2>Rome, Seamlessly Connected</h2>
-        <p>Your journey handled with precision and elegance.</p>
         <a href="#contact" class="btn">Plan Your Experience</a>
     </div>
 </section>
 
 <section class="contact" id="contact">
     <h2>Contact Us</h2>
-    <p>To plan your tailored experience in Rome, get in touch with us.</p>
     <a href="mailto:info@gmexperience.com" class="btn">Send an Email</a>
 </section>
 
 <footer>
-    © 2026 GM Experience — <span>Private Assistance in Rome</span>
+    © 2026 GM Experience
 </footer>
 
 <script>

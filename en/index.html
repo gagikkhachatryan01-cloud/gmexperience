@@ -5,22 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GM Experience | Effortless Luxury in Rome</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
+/* ===== GLOBAL ===== */
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: #0f0f0f;
-    color: white;
+    color: #ffffff;
 }
+
+/* ===== NAVBAR ===== */
 
 nav {
     position: fixed;
     width: 100%;
+    padding: 30px 8%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 5%;
+    align-items: center;
+    background: rgba(0,0,0,0.85);
     box-sizing: border-box;
     z-index: 1000;
 }
@@ -29,7 +36,32 @@ nav a {
     margin-left: 30px;
     text-decoration: none;
     color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
+
+nav a:hover {
+    color: #c6a75e;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+/* ===== HERO ===== */
 
 .hero {
     height: 100vh;
@@ -43,21 +75,91 @@ nav a {
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 60px;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #d6d6d6;
 }
 
 .btn {
-    border: 1px solid #c6a75e;
-    padding: 12px 30px;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 40px;
+    padding: 12px 30px;
+    border: 1px solid #c6a75e;
     text-decoration: none;
     color: white;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
     background: #c6a75e;
-    color: black;
+    color: #0f0f0f;
 }
+
+/* ===== PREVIEW SECTION ===== */
+
+.preview {
+    padding: 120px 12%;
+    text-align: center;
+}
+
+.preview h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+}
+
+.preview p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: #cfcfcf;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0f0f0f;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 40px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        margin-left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
+
+footer {
+    background: black;
+    text-align: center;
+    padding: 50px;
+    font-size: 13px;
+    color: #999;
+}
+
 </style>
 </head>
 
@@ -65,21 +167,50 @@ nav a {
 
 <nav>
     <div>GM EXPERIENCE</div>
-    <div>
+
+    <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="packages.html">Packages</a>
+        <a href="experiences.html">Experiences</a>
         <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </nav>
 
 <section class="hero">
     <div class="hero-content">
         <h1>Effortless Luxury in Rome</h1>
+        <p>Private assistance and curated experiences designed with discretion.</p>
         <a href="services.html" class="btn">Explore Our Services</a>
     </div>
 </section>
+
+<section class="preview">
+    <h2>A Refined Approach</h2>
+    <p>
+        GM Experience delivers tailored private assistance across Rome and
+        selected destinations. Every detail is handled with precision,
+        elegance and quiet sophistication.
+    </p>
+</section>
+
+<footer>
+    © 2026 GM Experience — Private Assistance in Rome
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>

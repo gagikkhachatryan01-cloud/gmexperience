@@ -3,95 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GM Experience | Luxury Services</title>
+<title>GM Experience | Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0f0f0f;
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
     color: white;
 }
 
 /* NAVBAR */
+
 nav {
+    position: fixed;
+    width: 100%;
+    padding: 30px 8%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 80px;
+    align-items: center;
+    background: rgba(0,0,0,0.85);
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 nav a {
-    color: white;
+    margin-left: 30px;
     text-decoration: none;
-    margin-left: 40px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-/* SECTION */
-.section {
-    padding: 100px 80px;
+nav a:hover {
+    color: #c6a75e;
+}
+
+.active {
+    color: #c6a75e;
+}
+
+/* HEADER */
+
+.page-header {
+    padding: 160px 12% 60px 12%;
     text-align: center;
 }
 
-.section h1 {
-    font-size: 42px;
-    margin-bottom: 60px;
-    color: #c6a75e;
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    letter-spacing: 2px;
 }
 
-/* SERVICE CARDS */
+/* CARDS */
+
+.services {
+    padding: 0 12% 120px 12%;
+}
+
 .service-card {
     background: #151515;
     padding: 50px;
-    margin: 40px auto;
-    max-width: 800px;
-    border-radius: 15px;
-    transition: 0.3s;
-    text-align: left;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
+    margin-bottom: 40px;
+    border-radius: 12px;
 }
 
 .service-card h2 {
-    color: #c6a75e;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
 }
 
 .service-card ul {
     line-height: 1.8;
-    opacity: 0.9;
+    color: #d6d6d6;
 }
 
 .btn {
     display: inline-block;
     margin-top: 30px;
     padding: 12px 30px;
-    background: #c6a75e;
-    color: black;
+    border: 1px solid #c6a75e;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
 }
 
-/* OUTLET GALLERY */
-.outlet-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.outlet-gallery img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
+.btn:hover {
+    background: #c6a75e;
+    color: #0f0f0f;
 }
 
 @media(max-width:768px){
     nav { padding: 20px; }
-    .section { padding: 60px 20px; }
+    .page-header { padding: 140px 20px 40px 20px; }
+    .services { padding: 0 20px 80px 20px; }
 }
 
 </style>
@@ -100,82 +109,62 @@ nav a {
 <body>
 
 <nav>
-    <div><strong>GM Experience</strong></div>
+    <div>GM EXPERIENCE</div>
     <div>
         <a href="index.html">Home</a>
         <a href="experiences.html">Experiences</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="shopping.html">Luxury Shopping</a>
         <a href="contact.html">Contact</a>
     </div>
 </nav>
 
-<section class="section">
-
+<section class="page-header">
     <h1>Luxury Service Packages</h1>
+</section>
 
-    <!-- PACKAGE 1 -->
+<section class="services">
+
     <div class="service-card">
-        <h2>Package I – Essential Welcome</h2>
+        <h2>Package I — Essential Welcome</h2>
         <ul>
             <li>Airport pickup with private luxury vehicle</li>
             <li>Transfer from airport to hotel</li>
             <li>Phone assistance before and after the flight</li>
             <li>Professional travel guidance</li>
         </ul>
-        <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="btn">
+        <a href="https://wa.me/393895368924" target="_blank" class="btn">
             Request Information
         </a>
     </div>
 
-    <!-- PACKAGE 2 -->
     <div class="service-card">
-        <h2>Package II – Premium Experience</h2>
+        <h2>Package II — Premium Experience</h2>
         <ul>
             <li>Everything included in Package I</li>
             <li>Two private transfers to destinations of your choice</li>
             <li>Villa d’Este, Castel Romano, Valmontone</li>
             <li>24h phone assistance during your stay</li>
         </ul>
-        <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="btn">
+        <a href="https://wa.me/393895368924" target="_blank" class="btn">
             Request Information
         </a>
     </div>
 
-    <!-- PACKAGE 3 -->
     <div class="service-card">
-        <h2>Package III – Exclusive Luxury</h2>
+        <h2>Package III — Exclusive Luxury</h2>
         <ul>
             <li>Everything included in Package II</li>
             <li>Up to 5 private transfers wherever you prefer</li>
             <li>Full personalized coordination</li>
             <li>Dedicated premium support</li>
         </ul>
-        <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="btn">
+        <a href="https://wa.me/393895368924" target="_blank" class="btn">
             Request Information
-        </a>
-    </div>
-
-    <!-- TAILOR MADE -->
-    <div class="service-card">
-        <h2>Tailor-Made Experience</h2>
-        <ul>
-            <li>Choose only the services you need</li>
-            <li>Hotel-to-outlet transfer only</li>
-            <li>Shopping at The Mall Firenze (Gucci, Prada, etc.)</li>
-            <li>Private day trip to Amalfi Coast</li>
-            <li>Fully customized itinerary</li>
-        </ul>
-        <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="btn">
-            Create Your Experience
         </a>
     </div>
 
 </section>
 
-<!-- OUTLET SECTION -->
-
-<section class="section">
-
-    <h1>Luxury Shopping Destinations</h1>
-
-    <h2 style="color:#c6a75e;">Castel Romano Designer Outlet</h2>
-    <div class="outlet-gallery">
+</body>
+</html>

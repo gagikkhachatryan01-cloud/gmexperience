@@ -5,27 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GM Experience | Experiences</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0f0f0f;
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
     color: white;
 }
 
-/* NAVBAR */
 nav {
+    position: fixed;
+    width: 100%;
+    padding: 30px 8%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 80px;
+    align-items: center;
+    background: rgba(0,0,0,0.85);
 }
 
 nav a {
-    color: white;
+    margin-left: 30px;
     text-decoration: none;
-    margin-left: 40px;
-    transition: 0.3s;
+    color: white;
+    font-size: 14px;
 }
 
 nav a:hover {
@@ -36,43 +41,39 @@ nav a:hover {
     color: #c6a75e;
 }
 
-/* SECTION */
-.section {
-    padding: 100px 80px;
+.page-header {
+    padding: 160px 12% 60px 12%;
     text-align: center;
 }
 
-.section h1 {
-    color: #c6a75e;
-    margin-bottom: 60px;
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
 }
 
-.experience-grid {
+.grid {
+    padding: 0 12% 120px 12%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
-.experience-card {
-    background: #151515;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.experience-card img {
+.card img {
     width: 100%;
-    height: 300px;
+    height: 280px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
-.experience-card:hover {
-    transform: translateY(-8px);
+.card h3 {
+    margin-top: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 @media(max-width:768px){
     nav { padding: 20px; }
-    .section { padding: 60px 20px; }
+    .page-header { padding: 140px 20px 40px 20px; }
+    .grid { padding: 0 20px 80px 20px; }
 }
 
 </style>
@@ -81,7 +82,7 @@ nav a:hover {
 <body>
 
 <nav>
-    <div><strong>GM Experience</strong></div>
+    <div>GM EXPERIENCE</div>
     <div>
         <a href="index.html">Home</a>
         <a href="experiences.html" class="active">Experiences</a>
@@ -91,8 +92,47 @@ nav a:hover {
     </div>
 </nav>
 
-<section class="section">
+<section class="page-header">
     <h1>Exclusive Experiences</h1>
+</section>
+
+<section class="grid">
+
+    <div class="card">
+        <img src="../images/roma/colosseo.jpg">
+        <h3>Colosseum</h3>
+    </div>
+
+    <div class="card">
+        <img src="../images/roma/fontana_di_trevi.jpg">
+        <h3>Trevi Fountain</h3>
+    </div>
+
+    <div class="card">
+        <img src="../images/roma/pantheon.jpg">
+        <h3>Pantheon</h3>
+    </div>
+
+    <div class="card">
+        <img src="../images/roma/piazza_di_spagna.jpg">
+        <h3>Piazza di Spagna</h3>
+    </div>
+
+    <div class="card">
+        <img src="../images/roma/altare_della_patria.jpg">
+        <h3>Altare della Patria</h3>
+    </div>
+
+    <div class="card">
+        <img src="../images/esperienze/villa_d_este/villa1.jpg">
+        <h3>Villa d’Este</h3>
+    </div>
+
+    <div class="card">
+        <img src="../images/esperienze/amalfi/amalfi1.jpg">
+        <h3>Amalfi Coast</h3>
+    </div>
+
 </section>
 
 </body>

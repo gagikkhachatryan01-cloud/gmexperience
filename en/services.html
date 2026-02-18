@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GM Experience | Luxury Packages</title>
+<title>GM Experience | Services</title>
 
 <style>
 
@@ -14,7 +14,6 @@ body {
     color: white;
 }
 
-/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
@@ -25,67 +24,48 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 40px;
+    transition: 0.3s;
 }
 
-/* SECTION */
-.services {
+nav a:hover {
+    color: #c6a75e;
+}
+
+.active {
+    color: #c6a75e;
+}
+
+.section {
     padding: 100px 80px;
     text-align: center;
 }
 
-.services h1 {
-    font-size: 42px;
-    margin-bottom: 60px;
+.section h1 {
     color: #c6a75e;
+    margin-bottom: 60px;
 }
 
 .service-card {
     background: #151515;
-    padding: 50px;
-    margin: 40px auto;
-    max-width: 600px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 700px;
     border-radius: 15px;
-    transition: 0.3s;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-}
-
-.service-card h2 {
-    margin-bottom: 20px;
-}
-
-.service-card p {
-    opacity: 0.8;
-    margin-bottom: 30px;
-}
-
-/* BUTTON */
 .btn {
     display: inline-block;
+    margin-top: 20px;
     padding: 12px 30px;
     background: #c6a75e;
     color: black;
     text-decoration: none;
     border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
-.btn:hover {
-    background: #d8b76a;
-}
-
-/* MOBILE */
 @media(max-width:768px){
-    nav {
-        padding: 20px;
-    }
-
-    .services {
-        padding: 60px 20px;
-    }
+    nav { padding: 20px; }
+    .section { padding: 60px 20px; }
 }
 
 </style>
@@ -98,29 +78,14 @@ nav a {
     <div>
         <a href="index.html">Home</a>
         <a href="experiences.html">Experiences</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="shopping.html">Luxury Shopping</a>
         <a href="contact.html">Contact</a>
     </div>
 </nav>
 
-<section class="services">
-    <h1>Luxury Packages</h1>
-
-    <div class="service-card">
-        <h2>Luxury Roman Escape</h2>
-        <p>Private driver, VIP access, fine dining experience with personal concierge.</p>
-        <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="btn">
-            Request Private Quote
-        </a>
-    </div>
-
-    <div class="service-card">
-        <h2>Imperial Day Experience</h2>
-        <p>Full-day guided tour of Rome’s iconic landmarks with exclusive access.</p>
-        <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="btn">
-            Request Private Quote
-        </a>
-    </div>
-
+<section class="section">
+    <h1>Luxury Service Packages</h1>
 </section>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>𝑮𝑴 𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆  | Effortless Luxury in Rome</title>
+<title>𝑮𝑴 𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆 | Effortless Luxury in Rome</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -23,13 +23,26 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    padding: 30px 8%;
+    padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.9);
     box-sizing: border-box;
     z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    height: 28px;
+    margin-right: 10px;
 }
 
 nav a {
@@ -46,7 +59,40 @@ nav a:hover {
 
 .nav-links {
     display: flex;
+    align-items: center;
 }
+
+/* LANGUAGE */
+
+.language {
+    margin-left: 30px;
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.language-menu {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background: #111;
+    display: none;
+    flex-direction: column;
+    min-width: 80px;
+}
+
+.language-menu a {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.language:hover .language-menu {
+    display: flex;
+}
+
+/* HAMBURGER */
 
 .hamburger {
     display: none;
@@ -61,24 +107,21 @@ nav a:hover {
     background: white;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO INTRO BLACK ===== */
 
-.hero {
-    height: 100vh;
-    background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-intro {
+    padding-top: 140px;
+    padding-bottom: 80px;
     text-align: center;
+    background: #000;
 }
 
-.hero-content h1 {
+.hero-intro h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 60px;
-    letter-spacing: 2px;
+    font-size: 48px;
 }
 
-.hero-content p {
+.hero-intro p {
     margin-top: 20px;
     font-size: 18px;
     color: #d6d6d6;
@@ -91,11 +134,58 @@ nav a:hover {
     border: 1px solid #c6a75e;
     text-decoration: none;
     color: white;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #c6a75e;
     color: #0f0f0f;
+}
+
+/* ===== COLOSSEUM IMAGE ===== */
+
+.hero-image {
+    height: 80vh;
+    background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
+}
+
+/* ===== ABOUT ===== */
+
+.about {
+    padding: 100px 15%;
+    text-align: center;
+    background: #000;
+}
+
+.about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #d6d6d6;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #0a0a0a;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.socials img {
+    width: 26px;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.socials img:hover {
+    transform: scale(1.2);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -118,17 +208,17 @@ nav a:hover {
         display: flex;
     }
 
-    .nav-links a {
-        padding: 15px 0;
-        margin-left: 0;
+    .nav-links a,
+    .language {
+        margin: 15px 0;
     }
 
     .hamburger {
         display: flex;
     }
 
-    .hero-content h1 {
-        font-size: 36px;
+    .hero-intro h1 {
+        font-size: 32px;
     }
 }
 
@@ -138,7 +228,11 @@ nav a:hover {
 <body>
 
 <nav>
-    <div>𝑮𝑴 𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆</div>
+
+    <div class="logo">
+        <img src="../images/logo.png" alt="GM Logo">
+        𝑮𝑴 𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆
+    </div>
 
     <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
@@ -146,6 +240,15 @@ nav a:hover {
         <a href="services.html">Services</a>
         <a href="shopping.html">Luxury Shopping</a>
         <a href="contact.html">Contact</a>
+
+        <div class="language">
+            ENG ▾
+            <div class="language-menu">
+                <a href="#">ITA</a>
+                <a href="#">ARM</a>
+                <a href="#">RU</a>
+            </div>
+        </div>
     </div>
 
     <div class="hamburger" id="hamburger">
@@ -153,15 +256,39 @@ nav a:hover {
         <span></span>
         <span></span>
     </div>
+
 </nav>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Effortless Luxury in Rome</h1>
-        <p>Private assistance and curated experiences designed with discretion.</p>
-        <a href="services.html" class="btn">Explore Our Services</a>
-    </div>
+<!-- BLACK INTRO SECTION -->
+
+<section class="hero-intro">
+    <h1>Effortless Luxury in Rome</h1>
+    <p>Private assistance and curated experiences designed with discretion.</p>
+    <a href="services.html" class="btn">Explore Our Services</a>
 </section>
+
+<!-- COLOSSEUM -->
+
+<section class="hero-image"></section>
+
+<!-- ABOUT -->
+
+<section class="about">
+    <h2>Who We Are</h2>
+    <p>
+        Two brothers living in Rome since 2012, deeply connected to the city's most refined venues and extraordinary experiences.
+        From hidden luxury locations to exclusive private services, we curate unforgettable moments with elegance and discretion.
+    </p>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="socials">
+        <a href="#"><img src="../images/whatsapp.png" alt="WhatsApp"></a>
+        <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
+    </div>
+</footer>
 
 <script>
 const hamburger = document.getElementById("hamburger");

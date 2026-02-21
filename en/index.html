@@ -14,22 +14,20 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+    color: white;
     background: #0f0f0f;
-    color: #ffffff;
 }
 
 /* ===== NAVBAR ===== */
 
 nav {
-    position: fixed;
+    position: absolute;
     width: 100%;
     padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.9);
-    box-sizing: border-box;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .logo {
@@ -83,7 +81,6 @@ nav a:hover {
 
 .language-menu a {
     padding: 8px 12px;
-    text-decoration: none;
     color: white;
     font-size: 12px;
 }
@@ -107,55 +104,62 @@ nav a:hover {
     background: white;
 }
 
-/* ===== HERO INTRO BLACK (RIDOTTO) ===== */
+/* ===== HERO FULL SCREEN ===== */
 
-.hero-intro {
-    padding-top: 95px;   /* spazio sotto navbar */
-    padding-bottom: 20px;
-    text-align: center;
-    background: #000;
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
 }
 
-.hero-intro h1 {
+/* overlay leggerissimo */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+}
+
+/* testo sulle nuvole */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-left: 10%;
+}
+
+.hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin: 0;
+    font-size: 52px;
+    margin-bottom: 20px;
 }
 
-.hero-intro p {
-    font-size: 14px;
-    margin: 6px 0 0 0;
+.hero-content p {
+    font-size: 18px;
+    color: #e0e0e0;
 }
 
 .btn {
-    margin-top: 10px;
-    padding: 6px 18px;
-    font-size: 12px;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    border: 1px solid #c6a75e;
+    color: white;
+    transition: 0.3s;
 }
-
 
 .btn:hover {
     background: #c6a75e;
-    color: #0f0f0f;
+    color: black;
 }
-
-/* ===== COLOSSEUM IMAGE ===== */
-
-.hero-image {
-    width: 100%;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 
 /* ===== ABOUT ===== */
 
 .about {
-    padding: 100px 15%;
+    padding: 120px 15%;
     text-align: center;
     background: #000;
 }
@@ -199,7 +203,7 @@ footer {
     position: absolute;
     top: 100%;
     right: 0;
-    background: #0f0f0f;
+    background: rgba(0,0,0,0.95);
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -214,7 +218,7 @@ footer {
 
 .hamburger { display: flex; }
 
-.hero-intro h1 { font-size: 30px; }
+.hero-content h1 { font-size: 32px; }
 
 }
 
@@ -257,14 +261,16 @@ EN ▾
 
 </nav>
 
-<section class="hero-intro">
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
 <h1>Effortless Luxury in Rome</h1>
 <p>Private assistance and curated experiences designed with discretion.</p>
 <a href="/en/services.html" class="btn">Explore Our Services</a>
-</section>
+</div>
 
-<section class="hero-image">
-    <img src="../images/roma/colosseo.jpg" alt="Colosseum Rome">
 </section>
 
 <section class="about">

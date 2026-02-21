@@ -64,7 +64,7 @@ nav a:hover {
     align-items: center;
 }
 
-/* LANGUAGE */
+/* ===== LANGUAGE DROPDOWN ===== */
 
 .language {
     margin-left: 30px;
@@ -75,25 +75,31 @@ nav a:hover {
 
 .language-menu {
     position: absolute;
-    top: 25px;
+    top: 30px;
     right: 0;
     background: #111;
     display: none;
     flex-direction: column;
-    min-width: 80px;
+    min-width: 90px;
+    border: 1px solid #222;
 }
 
 .language-menu a {
     padding: 8px 12px;
     color: white;
     font-size: 12px;
+    text-decoration: none;
 }
 
-.language:hover .language-menu {
+.language-menu a:hover {
+    background: #1a1a1a;
+}
+
+.language-menu.active {
     display: flex;
 }
 
-/* HAMBURGER */
+/* ===== HAMBURGER ===== */
 
 .hamburger {
     display: none;
@@ -116,18 +122,14 @@ nav a:hover {
     background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
-    padding-top: 90px; /* spazio per navbar */
+    padding-top: 90px;
 }
-
-/* overlay leggero */
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.25);
 }
-
-/* testo sulle nuvole */
 
 .hero-content {
     position: relative;
@@ -153,6 +155,7 @@ nav a:hover {
     padding: 12px 28px;
     border: 1px solid #c6a75e;
     color: white;
+    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -240,15 +243,16 @@ GM Experience
 </div>
 
 <div class="nav-links" id="navLinks">
+
 <a href="/en/">Home</a>
 <a href="/en/experiences.html">Experiences</a>
 <a href="/en/services.html">Services</a>
 <a href="/en/shopping.html">Shopping</a>
 <a href="/en/contact.html">Contact</a>
 
-<div class="language">
-EN ▾
-<div class="language-menu">
+<div class="language" id="languageToggle">
+<span>EN ▾</span>
+<div class="language-menu" id="languageMenu">
 <a href="/en/">EN</a>
 <a href="/it/">IT</a>
 <a href="/ru/">RU</a>
@@ -294,12 +298,30 @@ From hidden luxury locations to exclusive private services, we curate unforgetta
 </footer>
 
 <script>
+
+/* HAMBURGER */
+
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 hamburger.addEventListener("click", () => {
-navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
 });
+
+/* LANGUAGE DROPDOWN */
+
+const languageToggle = document.getElementById("languageToggle");
+const languageMenu = document.getElementById("languageMenu");
+
+languageToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    languageMenu.classList.toggle("active");
+});
+
+document.addEventListener("click", () => {
+    languageMenu.classList.remove("active");
+});
+
 </script>
 
 </body>

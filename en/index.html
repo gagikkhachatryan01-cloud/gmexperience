@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>𝑮𝑴 𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆 | Effortless Luxury in Rome</title>
+<title>GM Experience | Effortless Luxury in Rome</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -192,34 +192,27 @@ footer {
 
 @media(max-width:768px){
 
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #0f0f0f;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        padding: 40px 0;
-        display: none;
-    }
+.nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #0f0f0f;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    display: none;
+}
 
-    .nav-links.active {
-        display: flex;
-    }
+.nav-links.active { display: flex; }
 
-    .nav-links a,
-    .language {
-        margin: 15px 0;
-    }
+.nav-links a,
+.language { margin: 15px 0; }
 
-    .hamburger {
-        display: flex;
-    }
+.hamburger { display: flex; }
 
-    .hero-intro h1 {
-        font-size: 32px;
-    }
+.hero-intro h1 { font-size: 32px; }
+
 }
 
 </style>
@@ -229,65 +222,59 @@ footer {
 
 <nav>
 
-    <div class="logo">
-        <img src="../images/logo.png" alt="GM Logo">
-        𝑮𝑴 𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆
-    </div>
+<div class="logo">
+<img src="../images/logo.png" alt="GM Logo">
+GM Experience
+</div>
 
-    <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="experiences.html">Experiences</a>
-        <a href="services.html">Services</a>
-        <a href="shopping.html">Luxury Shopping</a>
-        <a href="contact.html">Contact</a>
+<div class="nav-links" id="navLinks">
+<a href="/en/">Home</a>
+<a href="/en/experiences.html">Experiences</a>
+<a href="/en/services.html">Services</a>
+<a href="/en/shopping.html">Shopping</a>
+<a href="/en/contact.html">Contact</a>
 
-        <div class="language">
-            ENG ▾
-            <div class="language-menu">
-                <a href="#">ITA</a>
-                <a href="#">ARM</a>
-                <a href="#">RU</a>
-            </div>
-        </div>
-    </div>
+<div class="language">
+EN ▾
+<div class="language-menu">
+<a href="/en/">EN</a>
+<a href="/it/">IT</a>
+<a href="/ru/">RU</a>
+<a href="/hy/">HY</a>
+</div>
+</div>
 
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+</div>
+
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
 </nav>
 
-<!-- BLACK INTRO SECTION -->
-
 <section class="hero-intro">
-    <h1>Effortless Luxury in Rome</h1>
-    <p>Private assistance and curated experiences designed with discretion.</p>
-    <a href="services.html" class="btn">Explore Our Services</a>
+<h1>Effortless Luxury in Rome</h1>
+<p>Private assistance and curated experiences designed with discretion.</p>
+<a href="/en/services.html" class="btn">Explore Our Services</a>
 </section>
-
-<!-- COLOSSEUM -->
 
 <section class="hero-image"></section>
 
-<!-- ABOUT -->
-
 <section class="about">
-    <h2>Who We Are</h2>
-    <p>
-        Two brothers living in Rome since 2012, deeply connected to the city's most refined venues and extraordinary experiences.
-        From hidden luxury locations to exclusive private services, we curate unforgettable moments with elegance and discretion.
-    </p>
+<h2>Who We Are</h2>
+<p>
+Two brothers living in Rome since 2012, deeply connected to the city's most refined venues and extraordinary experiences.
+From hidden luxury locations to exclusive private services, we curate unforgettable moments with elegance and discretion.
+</p>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-    <div class="socials">
-        <a href="#"><img src="../images/whatsapp.png" alt="WhatsApp"></a>
-        <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
-    </div>
+<div class="socials">
+<a href="https://wa.me/393895368924"><img src="../images/whatsapp.png" alt="WhatsApp"></a>
+<a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
+</div>
 </footer>
 
 <script>
@@ -295,7 +282,7 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+navLinks.classList.toggle("active");
 });
 </script>
 

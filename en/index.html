@@ -48,16 +48,14 @@ nav a {
     letter-spacing: 1px;
 }
 
-nav a:hover {
-    color: #c6a75e;
-}
+nav a:hover { color: #c6a75e; }
 
 .nav-links {
     display: flex;
     align-items: center;
 }
 
-/* ===== LANGUAGE DROPDOWN ===== */
+/* ===== LANGUAGE ===== */
 
 .language {
     margin-left: 30px;
@@ -88,9 +86,7 @@ nav a:hover {
     background: #1a1a1a;
 }
 
-.language-menu.active {
-    display: flex;
-}
+.language-menu.active { display: flex; }
 
 /* ===== HAMBURGER ===== */
 
@@ -178,12 +174,35 @@ nav a:hover {
     color: #d6d6d6;
 }
 
+/* ===== LOCAL KNOWLEDGE SECTION ===== */
+
+.local-knowledge {
+    padding: 120px 15%;
+    text-align: center;
+    background: #111;
+}
+
+.local-knowledge h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.local-knowledge p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #d6d6d6;
+}
+
 /* ===== FOOTER ===== */
 
 footer {
     background: #0a0a0a;
     padding: 60px 0;
     text-align: center;
+    font-size: 14px;
+    color: #777;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -220,9 +239,7 @@ footer {
 
 <nav>
 
-<div class="logo">
-GM Experience
-</div>
+<div class="logo">GM Experience</div>
 
 <div class="nav-links" id="navLinks">
 
@@ -253,15 +270,12 @@ GM Experience
 </nav>
 
 <section class="hero">
-
 <div class="hero-overlay"></div>
-
 <div class="hero-content">
 <h1>Effortless Luxury in Rome</h1>
 <p>Private assistance and curated experiences designed with discretion.</p>
 <a href="/en/services.html" class="btn">Explore Our Services</a>
 </div>
-
 </section>
 
 <section class="about">
@@ -272,18 +286,25 @@ From hidden luxury locations to exclusive private services, we curate unforgetta
 </p>
 </section>
 
-<script>
+<section class="local-knowledge">
+<h2>Rome, Through the Eyes of Those Who Live It</h2>
+<p>
+Rome is not experienced by following maps — it is discovered through local knowledge.  
+From refined dining to hidden gems, we guide our clients to authentic places where quality, atmosphere, and discretion truly matter.
+</p>
+</section>
 
-/* HAMBURGER */
+<footer>
+© 2026 GM Experience. All rights reserved.
+</footer>
+
+<script>
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
-
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
-
-/* LANGUAGE DROPDOWN */
 
 const languageToggle = document.getElementById("languageToggle");
 const languageMenu = document.getElementById("languageMenu");

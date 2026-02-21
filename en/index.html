@@ -29,17 +29,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0,0,0,0.95);
     box-sizing: border-box;
     z-index: 1000;
 }
 
-.logo img {
-    height: 40px;
-    display: block;
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
-
-/* NAV LINKS */
 
 nav a {
     margin-left: 30px;
@@ -187,16 +186,6 @@ footer {
     text-align: center;
 }
 
-.socials img {
-    width: 26px;
-    margin: 0 15px;
-    transition: 0.3s;
-}
-
-.socials img:hover {
-    transform: scale(1.2);
-}
-
 /* ===== RESPONSIVE ===== */
 
 @media(max-width:768px){
@@ -232,7 +221,7 @@ footer {
 <nav>
 
 <div class="logo">
-    <img src="../GM_Experience.png" alt="GM Experience">
+GM Experience
 </div>
 
 <div class="nav-links" id="navLinks">
@@ -282,13 +271,6 @@ Two brothers living in Rome since 2012, deeply connected to the city's most refi
 From hidden luxury locations to exclusive private services, we curate unforgettable moments with elegance and discretion.
 </p>
 </section>
-
-<footer>
-<div class="socials">
-<a href="https://wa.me/393895368924"><img src="../images/whatsapp.png" alt="WhatsApp"></a>
-<a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
-</div>
-</footer>
 
 <script>
 

@@ -36,6 +36,8 @@ font-family:'Playfair Display',serif;
 letter-spacing:2px; 
 }
 
+/* DESKTOP LINKS */
+
 .nav-links { 
 display:flex; 
 align-items:center; 
@@ -53,7 +55,7 @@ nav a:hover {
 color:#c6a75e; 
 }
 
-/* LANGUAGE DROPDOWN */
+/* LANGUAGE */
 
 .language {
 position:relative;
@@ -80,7 +82,7 @@ opacity:0;
 visibility:hidden;
 transform:translateY(10px);
 transition:0.3s ease;
-z-index:2100;
+z-index:3000;
 }
 
 .language-menu a {
@@ -107,7 +109,7 @@ transform:translateY(0);
 display:none;
 flex-direction:column;
 cursor:pointer;
-z-index:3000; 
+z-index:4000;
 position:relative;
 }
 
@@ -143,11 +145,11 @@ background:#0f0f0f;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
+justify-content:flex-start; /* NON centrato */
 gap:30px;
 transition:0.5s ease;
-z-index:2000;
-padding-top:120px;
+z-index:3000;
+padding-top:140px; /* spazio sotto navbar */
 }
 
 .mobile-menu a {
@@ -164,6 +166,8 @@ color:#c6a75e;
 right:0;
 }
 
+/* OVERLAY */
+
 .overlay {
 position:fixed;
 top:0;
@@ -174,7 +178,7 @@ background:rgba(0,0,0,0.6);
 opacity:0;
 visibility:hidden;
 transition:0.4s;
-z-index:1500;
+z-index:2000;
 }
 
 .overlay.active {
@@ -366,9 +370,7 @@ document.addEventListener("click", function(){
 language.classList.remove("active");
 });
 
-const langLinks = document.querySelectorAll(".language-menu a");
-
-langLinks.forEach(link => {
+document.querySelectorAll(".language-menu a").forEach(link=>{
 link.addEventListener("click", function(){
 language.classList.remove("active");
 });

@@ -8,11 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
 body { 
 margin:0; 
 font-family:'Inter',sans-serif; 
 background:#0f0f0f; 
 color:white; 
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -60,16 +62,9 @@ cursor:pointer;
 font-size:14px;
 }
 
-.language span {
-display:flex;
-align-items:center;
-gap:6px;
-}
-
 .language span::after {
-content:"▼";
+content:" ▼";
 font-size:10px;
-margin-top:2px;
 }
 
 .language-menu {
@@ -100,6 +95,85 @@ color:#c6a75e;
 display:block;
 }
 
+/* HAMBURGER */
+
+.hamburger {
+display:none;
+flex-direction:column;
+cursor:pointer;
+z-index:1100;
+}
+
+.hamburger span {
+height:2px;
+width:25px;
+background:white;
+margin:4px 0;
+transition:0.4s;
+}
+
+.hamburger.active span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+position:fixed;
+top:0;
+right:-100%;
+width:75%;
+height:100vh;
+background:#0f0f0f;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:30px;
+transition:0.5s ease;
+z-index:1050;
+}
+
+.mobile-menu a {
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+.mobile-menu a:hover {
+color:#c6a75e;
+}
+
+.mobile-menu.active {
+right:0;
+}
+
+.overlay {
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:0.4s;
+z-index:1040;
+}
+
+.overlay.active {
+opacity:1;
+visibility:visible;
+}
+
 /* HEADER */
 
 .page-header { 
@@ -119,7 +193,6 @@ padding:0 12%;
 margin:60px 0 30px;
 font-family:'Playfair Display',serif;
 font-size:28px;
-letter-spacing:1px;
 }
 
 /* GRID */
@@ -129,7 +202,6 @@ padding:0 12% 100px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-perspective:1000px;
 }
 
 /* CARD */
@@ -143,11 +215,10 @@ width:100%;
 height:280px;
 object-fit:cover;
 border-radius:12px;
-transition:transform 0.4s ease;
 }
 
 .card:hover {
-transform:scale(1.04) translateY(-5px);
+transform:scale(1.05) translateY(-6px);
 box-shadow:0 20px 40px rgba(0,0,0,0.6);
 }
 
@@ -156,11 +227,20 @@ margin-top:15px;
 font-family:'Playfair Display',serif;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media(max-width:768px){
-.nav-links { display:none; }
+
+.nav-links {
+display:none;
 }
+
+.hamburger {
+display:flex;
+}
+
+}
+
 </style>
 </head>
 
@@ -187,7 +267,23 @@ font-family:'Playfair Display',serif;
 </div>
 
 </div>
+
+<div class="hamburger" onclick="toggleMenu(this)">
+<span></span>
+<span></span>
+<span></span>
+</div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="/gmexperience/en/index.html">Home</a>
+<a href="/gmexperience/en/experiences.html">Experiences</a>
+<a href="/gmexperience/en/services.html">Services</a>
+<a href="/gmexperience/en/shopping.html">Luxury Shopping</a>
+<a href="/gmexperience/en/contact.html">Contact</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <section class="page-header">
 <h1>Exclusive Experiences</h1>
@@ -239,6 +335,16 @@ font-family:'Playfair Display',serif;
 </div>
 
 </section>
+
+<script>
+function toggleMenu(element){
+document.getElementById("mobileMenu").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
+if(element){
+element.classList.toggle("active");
+}
+}
+</script>
 
 </body>
 </html>

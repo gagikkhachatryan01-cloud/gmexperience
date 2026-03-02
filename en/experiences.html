@@ -53,7 +53,7 @@ nav a:hover {
 color:#c6a75e; 
 }
 
-/* LANGUAGE DROPDOWN */
+/* LANGUAGE DROPDOWN (CLICK) */
 
 .language {
 position:relative;
@@ -69,14 +69,18 @@ font-size:10px;
 
 .language-menu {
 position:absolute;
-top:30px;
+top:35px;
 right:0;
 background:#111;
 border-radius:8px;
 padding:10px 0;
-display:none;
 min-width:120px;
 box-shadow:0 10px 30px rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+transition:0.3s ease;
+z-index:1200;
 }
 
 .language-menu a {
@@ -91,8 +95,10 @@ background:#1c1c1c;
 color:#c6a75e;
 }
 
-.language:hover .language-menu {
-display:block;
+.language.active .language-menu {
+opacity:1;
+visibility:visible;
+transform:translateY(0);
 }
 
 /* HAMBURGER */
@@ -204,7 +210,7 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
-/* CARD */
+/* CARD HOVER 3D */
 
 .card {
 transition:transform 0.4s ease, box-shadow 0.4s ease;
@@ -256,7 +262,7 @@ display:flex;
 <a href="/gmexperience/en/shopping.html">Luxury Shopping</a>
 <a href="/gmexperience/en/contact.html">Contact</a>
 
-<div class="language">
+<div class="language" id="languageToggle">
 <span>EN</span>
 <div class="language-menu">
 <a href="#">EN</a>
@@ -337,6 +343,9 @@ display:flex;
 </section>
 
 <script>
+
+/* MOBILE MENU */
+
 function toggleMenu(element){
 document.getElementById("mobileMenu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
@@ -344,6 +353,28 @@ if(element){
 element.classList.toggle("active");
 }
 }
+
+/* LANGUAGE CLICK DROPDOWN */
+
+const language = document.getElementById("languageToggle");
+
+language.addEventListener("click", function(e){
+e.stopPropagation();
+language.classList.toggle("active");
+});
+
+document.addEventListener("click", function(){
+language.classList.remove("active");
+});
+
+const langLinks = document.querySelectorAll(".language-menu a");
+
+langLinks.forEach(link => {
+link.addEventListener("click", function(){
+language.classList.remove("active");
+});
+});
+
 </script>
 
 </body>

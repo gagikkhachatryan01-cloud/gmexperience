@@ -24,7 +24,7 @@ padding:25px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.95);
 z-index:1000;
 box-sizing:border-box;
 }
@@ -34,40 +34,70 @@ font-family:'Playfair Display',serif;
 letter-spacing:2px; 
 }
 
+.nav-links { 
+display:flex; 
+align-items:center; 
+}
+
 nav a { 
 margin-left:30px; 
 text-decoration:none; 
 color:white; 
 font-size:14px; 
+transition:0.3s;
 }
 
 nav a:hover { 
 color:#c6a75e; 
 }
 
-.nav-links { 
-display:flex; 
-align-items:center; 
-}
+/* LANGUAGE DROPDOWN */
 
-/* LANGUAGE SWITCH */
-
-.language-switch {
+.language {
+position:relative;
 margin-left:40px;
+cursor:pointer;
+font-size:14px;
+}
+
+.language span {
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.language span::after {
+content:"▼";
+font-size:10px;
+margin-top:2px;
+}
+
+.language-menu {
+position:absolute;
+top:30px;
+right:0;
+background:#111;
+border-radius:8px;
+padding:10px 0;
+display:none;
+min-width:120px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.language-menu a {
+display:block;
+padding:8px 15px;
+margin:0;
 font-size:13px;
-letter-spacing:1px;
 }
 
-.language-switch a {
-margin-left:10px;
-color:white;
-text-decoration:none;
-opacity:0.7;
-}
-
-.language-switch a:hover {
-opacity:1;
+.language-menu a:hover {
+background:#1c1c1c;
 color:#c6a75e;
+}
+
+.language:hover .language-menu {
+display:block;
 }
 
 /* HEADER */
@@ -99,6 +129,13 @@ padding:0 12% 100px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
+perspective:1000px;
+}
+
+/* CARD */
+
+.card {
+transition:transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card img {
@@ -106,6 +143,12 @@ width:100%;
 height:280px;
 object-fit:cover;
 border-radius:12px;
+transition:transform 0.4s ease;
+}
+
+.card:hover {
+transform:scale(1.04) translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
 }
 
 .card h3 {
@@ -133,18 +176,22 @@ font-family:'Playfair Display',serif;
 <a href="/gmexperience/en/shopping.html">Luxury Shopping</a>
 <a href="/gmexperience/en/contact.html">Contact</a>
 
-<div class="language-switch">
-<a href="/gmexperience/en/experiences.html">EN</a> |
-<a href="/gmexperience/it/experiences.html">IT</a>
+<div class="language">
+<span>EN</span>
+<div class="language-menu">
+<a href="#">EN</a>
+<a href="#">IT</a>
+<a href="#">RU</a>
+<a href="#">ARM</a>
 </div>
+</div>
+
 </div>
 </nav>
 
 <section class="page-header">
 <h1>Exclusive Experiences</h1>
 </section>
-
-<!-- ROME SECTION -->
 
 <h2 class="section-title">Experiences in Rome</h2>
 
@@ -170,9 +217,12 @@ font-family:'Playfair Display',serif;
 <h3>Altare della Patria</h3>
 </div>
 
-</section>
+<div class="card">
+<img src="../images/roma/piazza_di_spagna.jpg">
+<h3>Piazza di Spagna</h3>
+</div>
 
-<!-- OUTSIDE ROME SECTION -->
+</section>
 
 <h2 class="section-title">Experiences Outside Rome</h2>
 

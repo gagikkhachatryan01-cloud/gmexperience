@@ -53,7 +53,7 @@ nav a:hover {
 color:#c6a75e; 
 }
 
-/* LANGUAGE DROPDOWN (CLICK) */
+/* LANGUAGE DROPDOWN */
 
 .language {
 position:relative;
@@ -80,7 +80,7 @@ opacity:0;
 visibility:hidden;
 transform:translateY(10px);
 transition:0.3s ease;
-z-index:1200;
+z-index:2100;
 }
 
 .language-menu a {
@@ -107,7 +107,8 @@ transform:translateY(0);
 display:none;
 flex-direction:column;
 cursor:pointer;
-z-index:1100;
+z-index:3000; 
+position:relative;
 }
 
 .hamburger span {
@@ -145,7 +146,8 @@ align-items:center;
 justify-content:center;
 gap:30px;
 transition:0.5s ease;
-z-index:1050;
+z-index:2000;
+padding-top:120px;
 }
 
 .mobile-menu a {
@@ -172,7 +174,7 @@ background:rgba(0,0,0,0.6);
 opacity:0;
 visibility:hidden;
 transition:0.4s;
-z-index:1040;
+z-index:1500;
 }
 
 .overlay.active {
@@ -210,7 +212,7 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
-/* CARD HOVER 3D */
+/* CARD HOVER */
 
 .card {
 transition:transform 0.4s ease, box-shadow 0.4s ease;
@@ -271,10 +273,9 @@ display:flex;
 <a href="#">ARM</a>
 </div>
 </div>
-
 </div>
 
-<div class="hamburger" onclick="toggleMenu(this)">
+<div class="hamburger" onclick="toggleMenu()">
 <span></span>
 <span></span>
 <span></span>
@@ -298,7 +299,6 @@ display:flex;
 <h2 class="section-title">Experiences in Rome</h2>
 
 <section class="grid">
-
 <div class="card">
 <img src="../images/roma/colosseo.jpg">
 <h3>Colosseum</h3>
@@ -323,13 +323,11 @@ display:flex;
 <img src="../images/roma/piazza_di_spagna.jpg">
 <h3>Piazza di Spagna</h3>
 </div>
-
 </section>
 
 <h2 class="section-title">Experiences Outside Rome</h2>
 
 <section class="grid">
-
 <div class="card">
 <img src="../images/esperienze/villa_d_este/villa1.jpg">
 <h3>Villa d’Este</h3>
@@ -339,22 +337,23 @@ display:flex;
 <img src="../images/esperienze/amalfi/amalfi1.jpg">
 <h3>Amalfi Coast</h3>
 </div>
-
 </section>
 
 <script>
 
 /* MOBILE MENU */
 
-function toggleMenu(element){
-document.getElementById("mobileMenu").classList.toggle("active");
-document.getElementById("overlay").classList.toggle("active");
-if(element){
-element.classList.toggle("active");
-}
+function toggleMenu(){
+const menu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+const hamburger = document.querySelector(".hamburger");
+
+menu.classList.toggle("active");
+overlay.classList.toggle("active");
+hamburger.classList.toggle("active");
 }
 
-/* LANGUAGE CLICK DROPDOWN */
+/* LANGUAGE CLICK */
 
 const language = document.getElementById("languageToggle");
 

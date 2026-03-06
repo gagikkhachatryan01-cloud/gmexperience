@@ -108,7 +108,7 @@ nav a:hover { color: #c6a75e; }
 .hero {
     position: relative;
     height: 100vh;
-    background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
+    background: url('images/roma/colosseo.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -153,42 +153,23 @@ nav a:hover { color: #c6a75e; }
     color: black;
 }
 
-/* ===== ABOUT ===== */
+/* ===== SECTIONS ===== */
 
-.about {
+.about, .local-knowledge {
     padding: 120px 15%;
     text-align: center;
-    background: #000;
 }
 
-.about h2 {
+.about { background: #000; }
+.local-knowledge { background: #111; }
+
+.about h2, .local-knowledge h2 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-bottom: 30px;
 }
 
-.about p {
-    max-width: 750px;
-    margin: auto;
-    line-height: 1.8;
-    color: #d6d6d6;
-}
-
-/* ===== LOCAL KNOWLEDGE SECTION ===== */
-
-.local-knowledge {
-    padding: 120px 15%;
-    text-align: center;
-    background: #111;
-}
-
-.local-knowledge h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.local-knowledge p {
+.about p, .local-knowledge p {
     max-width: 750px;
     margin: auto;
     line-height: 1.8;
@@ -243,19 +224,19 @@ footer {
 
 <div class="nav-links" id="navLinks">
 
-<a href="/gmexperience/en/">Home</a>
-<a href="/gmexperience/en/experiences.html">Experiences</a>
-<a href="/gmexperience/en/services.html">Services</a>
-<a href="/gmexperience/en/shopping.html">Shopping</a>
-<a href="/gmexperience/en/contact.html">Contact</a>
+<a href="en/">Home</a>
+<a href="en/experiences.html">Experiences</a>
+<a href="en/services.html">Services</a>
+<a href="en/shopping.html">Shopping</a>
+<a href="en/contact.html">Contact</a>
 
 <div class="language" id="languageToggle">
 <span>EN ▾</span>
 <div class="language-menu" id="languageMenu">
-<a href="/en/">EN</a>
-<a href="/it/">IT</a>
-<a href="/ru/">RU</a>
-<a href="/hy/">HY</a>
+<a href="en/">EN</a>
+<a href="it.html">IT</a>
+<a href="ru.html">RU</a>
+<a href="hy.html">HY</a>
 </div>
 </div>
 
@@ -274,7 +255,7 @@ footer {
 <div class="hero-content">
 <h1>Effortless Luxury in Rome</h1>
 <p>Private assistance and curated experiences designed with discretion.</p>
-<a href="/en/services.html" class="btn">Explore Our Services</a>
+<a href="en/services.html" class="btn">Explore Our Services</a>
 </div>
 </section>
 
@@ -289,7 +270,7 @@ From hidden luxury locations to exclusive private services, we curate unforgetta
 <section class="local-knowledge">
 <h2>Rome, Through the Eyes of Those Who Live It</h2>
 <p>
-Rome is not experienced by following maps — it is discovered through local knowledge.  
+Rome is not experienced by following maps — it is discovered through local knowledge.
 From refined dining to hidden gems, we guide our clients to authentic places where quality, atmosphere, and discretion truly matter.
 </p>
 </section>

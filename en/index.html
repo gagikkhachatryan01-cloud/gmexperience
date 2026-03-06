@@ -9,8 +9,6 @@
 
 <style>
 
-/* ===== GLOBAL ===== */
-
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -19,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 
 nav {
     position: fixed;
@@ -55,40 +53,7 @@ nav a:hover { color: #c6a75e; }
     align-items: center;
 }
 
-/* ===== LANGUAGE ===== */
-
-.language {
-    margin-left: 30px;
-    position: relative;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.language-menu {
-    position: absolute;
-    top: 30px;
-    right: 0;
-    background: #111;
-    display: none;
-    flex-direction: column;
-    min-width: 90px;
-    border: 1px solid #222;
-}
-
-.language-menu a {
-    padding: 8px 12px;
-    color: white;
-    font-size: 12px;
-    text-decoration: none;
-}
-
-.language-menu a:hover {
-    background: #1a1a1a;
-}
-
-.language-menu.active { display: flex; }
-
-/* ===== HAMBURGER ===== */
+/* HAMBURGER */
 
 .hamburger {
     display: none;
@@ -103,12 +68,12 @@ nav a:hover { color: #c6a75e; }
     background: white;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 
 .hero {
     position: relative;
     height: 100vh;
-    background: url('images/roma/colosseo.jpg') center/cover no-repeat;
+    background: url('../images/roma/colosseo.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -153,7 +118,7 @@ nav a:hover { color: #c6a75e; }
     color: black;
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 
 .about, .local-knowledge {
     padding: 120px 15%;
@@ -176,7 +141,7 @@ nav a:hover { color: #c6a75e; }
     color: #d6d6d6;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer {
     background: #0a0a0a;
@@ -186,7 +151,7 @@ footer {
     color: #777;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
@@ -204,8 +169,9 @@ footer {
 
 .nav-links.active { display: flex; }
 
-.nav-links a,
-.language { margin: 15px 0; }
+.nav-links a { 
+    margin: 15px 0;
+}
 
 .hamburger { display: flex; }
 
@@ -224,21 +190,11 @@ footer {
 
 <div class="nav-links" id="navLinks">
 
-<a href="en/">Home</a>
-<a href="en/experiences.html">Experiences</a>
-<a href="en/services.html">Services</a>
-<a href="en/shopping.html">Shopping</a>
-<a href="en/contact.html">Contact</a>
-
-<div class="language" id="languageToggle">
-<span>EN ▾</span>
-<div class="language-menu" id="languageMenu">
-<a href="en/">EN</a>
-<a href="it.html">IT</a>
-<a href="ru.html">RU</a>
-<a href="hy.html">HY</a>
-</div>
-</div>
+<a href="index.html">Home</a>
+<a href="experiences.html">Experiences</a>
+<a href="services.html">Services</a>
+<a href="shopping.html">Luxury Shopping</a>
+<a href="contact.html">Contact</a>
 
 </div>
 
@@ -255,7 +211,7 @@ footer {
 <div class="hero-content">
 <h1>Effortless Luxury in Rome</h1>
 <p>Private assistance and curated experiences designed with discretion.</p>
-<a href="en/services.html" class="btn">Explore Our Services</a>
+<a href="services.html" class="btn">Explore Our Services</a>
 </div>
 </section>
 
@@ -280,25 +236,12 @@ From refined dining to hidden gems, we guide our clients to authentic places whe
 </footer>
 
 <script>
-
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
+
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
-
-const languageToggle = document.getElementById("languageToggle");
-const languageMenu = document.getElementById("languageMenu");
-
-languageToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    languageMenu.classList.toggle("active");
-});
-
-document.addEventListener("click", () => {
-    languageMenu.classList.remove("active");
-});
-
 </script>
 
 </body>
